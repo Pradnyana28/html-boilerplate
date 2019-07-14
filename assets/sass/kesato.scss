@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+/**
+ * Copyright to Kesato Team
+ *
+ * Developed with love by https://github.com/Pradnyana28
+ * Kesato's Front End Developer
+ *
+ * Supra concept
+ * Version: 0.1.0
+ */
+
+//  contain config only and should not outputing any css
+@import 'lib/variable',
+        'lib/function',
+        'lib/mixin',
+        'lib/keyframes';
+
+// contain resets
+@import 'base/normalizr';
+
+// contain layouts style
+@import 'layouts/preloader',
+        'layouts/header';
+
+// contain components style
+@import 'components/button';
+
+// contain style for specific pages
+@import 'pages/home';
+
+// contain style for theme, ex. color sheme
+@import 'themes/default';
+
+// for responsiveness
+@import 'lib/responsive';
