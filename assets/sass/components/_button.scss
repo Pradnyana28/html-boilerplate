@@ -1,4 +1,6 @@
 .btn {
+    text-transform: uppercase;
+
     &.btn-default {
         background-image: $gradient-brand-color;
         color: #FFF;
