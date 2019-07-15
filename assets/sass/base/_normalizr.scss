@@ -1,12 +1,16 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
+h1 { font-size: 30px; }
+h2 { font-size: 25px; }
+h3 { font-size: 17px; }
+
 p {
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 14px;
 }

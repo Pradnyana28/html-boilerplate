@@ -1,0 +1,17 @@
+.btn {
+    &.btn-default {
+        background-image: $gradient-brand-color;
+        color: #FFF;
+    }
+
+    &.btn-default-outline {
+        background-color: transparent;
+        border: 2px solid $brand-color;
+        color: $brand-color;
+
+        &:hover {
+            background-image: $gradient-brand-color;
+            color: #FFF;
+        }
+    }
+}

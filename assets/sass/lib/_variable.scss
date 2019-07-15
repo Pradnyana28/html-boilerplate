@@ -4,10 +4,15 @@ $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
 
 // COLORS
 $text-color: rgb(34, 34, 34) !default;
-$brand-color: rgb(229, 0, 80) !default;
+$brand-color: rgb(156, 36, 100) !default;
 $light-grey: rgb(237, 237, 237) !default;
 $mid-grey: rgb(153, 153, 153) !default;
 $dark-grey: rgb(68, 68, 68) !default;
+
+// GRADIENT COLORS
+$gradient-brand-color: linear-gradient(to right, rgb(87, 13, 52), rgb(156, 36, 100)) !default;
+
+// BOOTSTRAP DEFAULT COLOR SCHEME
 
 $max-width: 1180px !default;
 $breakpoints: (
