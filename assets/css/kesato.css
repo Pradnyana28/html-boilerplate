@@ -396,6 +396,14 @@ ul li {
 }
 
 @media (max-width: 991px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .no-mb-on-mobile {
+    margin-bottom: 0 !important;
+  }
+
   .navbar-top {
     display: none !important;
   }
@@ -415,6 +423,16 @@ ul li {
 
   .contact-us-btn {
     display: none !important;
+  }
+
+  .section .section-image {
+    width: 100% !important;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+
+  .margin-bottom-mobile {
+    margin-bottom: 20px;
   }
 }
 
