@@ -8,6 +8,9 @@
 
     <!-- load fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <!-- leaflet.js library -->
+    <link rel="stylesheet" href="/assets/css/leaflet.css">
+    <script src="/assets/js/leaflet.js"></script>
     <!-- load styles -->
     <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
@@ -169,6 +172,15 @@
 
         <!-- line separator -->
         <div class="line-horizontal"></div>
+
+        <div id="maps-content">
+            <div class="container mt-5 mb-5">
+                <h2 class="text-uppercase mb-5 text-center">Nos Establissements D'enseignements</h2>
+                <p class="text-center subtitle-max">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab voluptates quam ad,
+                    quos quia cumque nostrum natus, minus quas odit beatae ut nulla omnis quae odio earum unde est accusantium.</p>
+            </div>
+            <div id="maps-wrapper" data-latitude="-8.7000773" data-longitude="115.1899732"></div>
+        </div>
     </main>
 
     <!-- All scripts -->

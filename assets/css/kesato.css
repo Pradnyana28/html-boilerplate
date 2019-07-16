@@ -314,6 +314,11 @@ p {
   z-index: -1;
 }
 
+#maps-wrapper {
+  width: 100%;
+  height: 450px;
+}
+
 .default-color {
   color: #9c2464;
 }
@@ -336,6 +341,11 @@ p {
   width: 90%;
   background-image: linear-gradient(to right, #570d34, #9c2464);
   margin: 8% 0;
+}
+
+.subtitle-max {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 @media (max-width: 991px) {
