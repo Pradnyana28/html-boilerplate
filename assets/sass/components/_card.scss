@@ -1,0 +1,45 @@
+.kesato-card {
+    border: 4px solid transparent;
+    transition: 0.4s;
+    -webkit-box-shadow: 0 0 20px 0 rgba(31, 10, 72, 0.16);
+    box-shadow: 0 0 20px 0 rgba(31, 10, 72, 0.16);
+    
+    .card-image {
+        height: 240px;
+        overflow: hidden;
+
+        img {
+            -moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            -ms-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+            object-fit: cover;
+            -o-object-fit: cover;
+            transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            -o-transform: scale(1.2);
+        }
+    }
+
+    .card-body {
+        .card-title {
+            text-transform: uppercase;
+        }
+    }
+
+    &:hover {
+        border: 4px solid $brand-color;
+        .card-image { z-index: -2; }
+    }
+
+    .card-hover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #FFF;
+        z-index: -1;
+    }
+}
