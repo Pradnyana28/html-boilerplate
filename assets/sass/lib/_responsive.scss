@@ -1,10 +1,20 @@
 @media (max-width: 1500px) {}
 @media (max-width: 991px) {
+    .navbar-top {
+        display: none !important;
+    }
+    .main-menu {
+        background-image: $gradient-brand-color !important;
+        padding: 30px 0 !important;
+    }
     .logo {
         float: left;
     }
     .menu-button {
         float: right;
+    }
+    .contact-us-btn {
+        display: none !important;
     }
 }
 @media (min-width: 992px) {}
