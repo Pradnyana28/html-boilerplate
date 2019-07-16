@@ -13,3 +13,11 @@
 .text-bold {
     font-weight: 700;
 }
+
+.line-horizontal {
+    content: ' ';
+    height: 10px;
+    width: 90%;
+    background-image: $gradient-brand-color;
+    margin: 8% 0;
+}

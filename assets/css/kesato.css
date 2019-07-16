@@ -330,6 +330,14 @@ p {
   font-weight: 700;
 }
 
+.line-horizontal {
+  content: " ";
+  height: 10px;
+  width: 90%;
+  background-image: linear-gradient(to right, #570d34, #9c2464);
+  margin: 8% 0;
+}
+
 @media (max-width: 991px) {
   .logo {
     float: left;
