@@ -24,7 +24,9 @@
         'layouts/header';
 
 // contain components style
-@import 'components/button';
+@import 'components/button',
+        'components/section',
+        'components/card';
 
 // contain style for specific pages
 @import 'pages/home';

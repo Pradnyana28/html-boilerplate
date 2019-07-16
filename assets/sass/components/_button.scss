@@ -1,5 +1,6 @@
 .btn {
     text-transform: uppercase;
+    border-width: 2px;
 
     &.btn-default {
         background-image: $gradient-brand-color;
@@ -15,5 +16,11 @@
             background-image: $gradient-brand-color;
             color: #FFF;
         }
+    }
+
+    &.btn-hover-outline:hover {
+        background: transparent;
+        color: $brand-color;
+        border-color: $brand-color;
     }
 }
