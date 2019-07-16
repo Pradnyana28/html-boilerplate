@@ -265,14 +265,46 @@ p {
   -webkit-transform: scale(1.2);
   -o-transform: scale(1.2);
 }
+.kesato-card .card-body {
+  height: 230px;
+}
 .kesato-card .card-body .card-title {
   text-transform: uppercase;
+}
+.kesato-card .card-body .card-text span {
+  display: none;
+}
+.kesato-card .card-body .card-slide-up {
+  position: relative;
+  background: #FFF;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 20px;
+  height: 150px;
 }
 .kesato-card:hover {
   border: 4px solid #9c2464;
 }
 .kesato-card:hover .card-image {
   z-index: -2;
+}
+.kesato-card:hover .card-body .card-text span {
+  display: inline;
+}
+.kesato-card:hover .card-body .card-slide-up {
+  top: -150px;
+}
+.kesato-card:hover .card-body .card-slide-up .card-title {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.kesato-card:hover .card-body .card-slide-up .card-title:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 20px;
+  margin: 2% 0;
+  border: 2px solid #000;
 }
 .kesato-card .card-hover {
   position: absolute;

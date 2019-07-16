@@ -25,14 +25,52 @@
     }
 
     .card-body {
+        height: 230px;
+
         .card-title {
             text-transform: uppercase;
+        }
+
+        .card-text {
+            span {
+                display: none;
+            }
+        }
+
+        .card-slide-up {
+            position: relative;
+            background: #FFF;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding: 20px;
+            height: 150px;
         }
     }
 
     &:hover {
         border: 4px solid $brand-color;
         .card-image { z-index: -2; }
+        .card-body {
+            .card-text {
+                span { display: inline; }
+            }
+            .card-slide-up {
+                top: -150px;
+                .card-title {
+                    font-size: 30px;
+                    margin-bottom: 30px;
+
+                    &:after {
+                        content: ' ';
+                        position: absolute;
+                        display: block;
+                        width: 20px;
+                        margin: 2% 0;
+                        border: 2px solid #000;
+                    }
+                }
+            }
+        }
     }
 
     .card-hover {
