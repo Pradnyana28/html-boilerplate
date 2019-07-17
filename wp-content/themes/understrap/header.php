@@ -41,10 +41,18 @@ $navigation_logo = get_field( 'logo' );
 
 	<div class="navbar-top d-flex">
 		<div class="container">
-			<ul>
-				<li><a href="/">Menu 1</a></li>
-				<li><a href="/">Menu 2</a></li>
-			</ul>
+			<?php wp_nav_menu(
+				array(
+					'theme_location'  => 'topbar',
+					'container_class' => '',
+					'container_id'    => 'navbar-top-menu',
+					'menu_class'      => '',
+					'fallback_cb'     => '',
+					'menu_id'         => 'topbar-menu',
+					'depth'           => 2,
+					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+				)
+			); ?>
 		</div>
 	</div>
 
