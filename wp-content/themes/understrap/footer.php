@@ -12,34 +12,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $container = get_theme_mod( 'understrap_container_type' );
+$footer_logo = get_field( 'logo' );
+$social_facebook = get_field( 'facebook_url' );
+$social_instagram = get_field( 'instagram_url' );
+$social_twitter = get_field( 'twitter_url' );
 ?>
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
 <div class="wrapper" id="wrapper-footer">
-
-	<div class="<?php echo esc_attr( $container ); ?>">
-
-		<div class="row">
-
-			<div class="col-md-12">
-
-				<footer class="site-footer" id="colophon">
-
-					<div class="site-info">
-
-						<?php understrap_site_info(); ?>
-
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
-
-	</div><!-- container end -->
-
+	<?php if ( $social_facebook || $social_instagram || $social_twitter ): ?>
+	<section class="footer-copyright">
+		<div class="<?= esc_attr( $container ); ?> overflow-hidden">
+			<div class="pull-right p-3">
+				<ul>
+					<?php if ( $social_facebook ): ?>
+						<li><a href="<?= $social_facebook ?>" target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
+					<?php endif; ?>
+					<?php if ( $social_instagram ): ?>
+						<li><a href="<?= $social_instagram ?>" target="_blank" class="text-white"><i class="fab fa-instagram-f"></i></a></li>
+					<?php endif; ?>
+					<?php if ( $social_twitter ): ?>
+						<li><a href="<?= $social_twitter ?>" target="_blank" class="text-white"><i class="fab fa-twitter-f"></i></a></li>
+					<?php endif; ?>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<?php endif; ?>
 </div><!-- wrapper end -->
 
 </div><!-- #page we need this extra closing tag here -->
