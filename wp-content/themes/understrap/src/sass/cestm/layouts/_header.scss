@@ -1,0 +1,107 @@
+.kst-header {
+    width: 100%;
+    // position: absolute;
+    z-index: 2;
+    border-bottom: $border-bottom;
+
+    .navbar-top {
+        padding: 10px 0;
+        height: 48px;
+        background-image: $gradient-brand-color;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            float: right;
+
+            li {
+                list-style-type: none;
+                float: left;
+                padding: 0 8px;
+                text-transform: uppercase;
+
+                a {
+                    color: #FFF;
+                }
+            }
+        }
+    }
+
+    .logo-wrapper {
+        position: absolute;
+        top: 0;
+        width: 196px;
+        background: #FFF;
+        padding: 20px;
+
+        a { 
+            color: #FFF; 
+            font-size: 30px;
+        }
+
+        .logo { width: 100%; }
+    }
+
+    .main-menu {
+        width: 100%;
+        background: #FFF;
+        padding: 18px 0;
+
+        ul {
+            list-style-type: none;
+            float: right;
+            padding: 0;
+            margin: 0;
+
+            li {
+                float: left;
+                padding: 0 10px;
+                position: relative;
+                transition: all 1s ease-in;
+                text-transform: uppercase;
+    
+                a { 
+                    color: #000;
+                    text-decoration: none;
+                    align-items: center;
+                }
+
+                ul {
+                    display: none;
+                    position: absolute;
+                    left: -25px;
+                    padding: 35px 3px;
+
+                    li {
+                        margin: 0;
+                        padding: 15px 0 15px 17px;
+                        border-bottom: 1px solid rgba(255,255,255,0.07);
+                        border-left: 0;
+                        width: 250px;
+                        background: $brand-color;
+                    }
+                }
+
+                &:hover {
+                    ul { 
+                        display: block;
+                        li a {
+                            transition: all 0.4s ease-in-out;
+
+                            &:hover {
+                                display: block;
+                                color: #000;
+                                text-indent: 10px;
+                                border-left: 5px solid #FFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sign-in {
+        a { color: #FFF; }
+    }
+}
