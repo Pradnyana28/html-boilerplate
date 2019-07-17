@@ -23,6 +23,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 </head>
 
 <body <?php body_class(); ?>>
+<!-- Page Preloader -->
+<div class="preloader">
+	<div class="loader">Loading...</div>
+</div>
+
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
