@@ -33,3 +33,32 @@ if ( ! function_exists( 'understrap_setup_theme_default_settings' ) ) {
 		}
 	}
 }
+
+if ( ! function_exists( 'cestm_breadcrumbs' ) ) {
+	function cestm_breadcrumbs( $post, $taxonomy ) {
+		ob_start();
+		$term_ids = wp_get_post_terms( $post->ID, $taxonomy, array(
+			'fields'  => 'ids',
+		) );
+		$terms = get_terms( $taxonomy, array(
+			'include'    => $term_ids,
+			'orderby'    => 'term_order',
+			'order'      => 'ASC',
+			'hide_empty' => false
+		) );
+		$links = array();
+		foreach ( $terms as $term ) {
+			$link =  $link = get_term_link( $term, $taxonomy );
+			$links[] = sprintf(
+				'<li><a href="%s" rel="tag">%s</a></li>',
+				esc_attr( $link ),
+				esc_html( $term->name )
+			);
+		}
+		$links[] = "<li>{$post->post_title}</li>";
+		echo '<ul>';
+		echo implode( '', $links );
+		echo '</ul>';
+		return ob_get_clean();
+	}
+}

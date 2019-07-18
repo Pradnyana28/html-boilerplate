@@ -28,7 +28,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="entry-content">
 
+		<?php if( $post->post_type == 'programs' ): ?>
+			<?php get_template_part( 'global-templates/programs-open', 'page' ) ?>
+		<?php endif; ?>
+
 		<?php the_content(); ?>
+
+		<?php if( $post->post_type == 'programs' ): ?>
+			<?php get_template_part( 'global-templates/programs-close', 'page' ) ?>
+		<?php endif; ?>
 
 		<?php
 		wp_link_pages(
