@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <div class="cestm-wrapper shadow">
-    <div class="breadcrumbs">
+    <div class="cestm-breadcrumbs">
         <?php echo cestm_breadcrumbs( $post, 'departments' ) ?>
     </div>
 

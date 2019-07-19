@@ -50,7 +50,7 @@ if ( ! function_exists( 'cestm_breadcrumbs' ) ) {
 		foreach ( $terms as $term ) {
 			$link =  $link = get_term_link( $term, $taxonomy );
 			$links[] = sprintf(
-				'<li><a href="%s" rel="tag">%s</a></li>',
+				'<li class="with-hover"><a href="%s" rel="tag" class="text-white">%s</a></li>',
 				esc_attr( $link ),
 				esc_html( $term->name )
 			);

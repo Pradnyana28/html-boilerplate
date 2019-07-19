@@ -1,0 +1,34 @@
+.cestm-breadcrumbs {
+    background-image: $gradient-brand-color;
+
+    ul {
+        overflow: hidden;
+        border-bottom: 4px solid $light-grey;
+
+        li {
+            float: left;
+            padding: 14px 20px;
+            border-right: 4px solid $light-grey;
+            color: #ffffff;
+            transition: 0.4s;
+
+            a {
+                text-decoration: none;
+                &:after {
+                    content: ' \003e';
+                    font-size: 10px;
+                    margin-left: 10px;
+                }
+            }
+
+            &:last-child {
+                border-right: none;
+            }
+
+            &.with-hover:hover {
+                background-color: #ffffff;
+                a { color: $brand-color !important; }
+            }
+        }
+    }
+}
