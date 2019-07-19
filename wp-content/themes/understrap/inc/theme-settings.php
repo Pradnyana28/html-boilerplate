@@ -55,7 +55,7 @@ if ( ! function_exists( 'cestm_breadcrumbs' ) ) {
 				esc_html( $term->name )
 			);
 		}
-		$links[] = "<li>{$post->post_title}</li>";
+		$links[] = "<li class='hide-on-mobile'>{$post->post_title}</li>";
 		echo '<ul>';
 		echo implode( '', $links );
 		echo '</ul>';
