@@ -65,7 +65,12 @@ if ( ! defined( 'ABSPATH' ) ) {
                     How To Register
                 </a>
                 <div class="collapse collapse-content" id="howToRegister">
-                    <?php the_field( 'how_to_register' ) ?>
+                    <?php
+                        // $how_to_register = get_field( 'how_to_register' );
+                        // echo "<pre>";
+                        // print_r($how_to_register);
+                        // echo "</pre>";
+                    ?>
                 </div>
             </div>
         </div>

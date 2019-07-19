@@ -10,7 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $subtitle = get_field( 'subtitle' );
-$tagline  = get_field( 'tagline' );
 $month    = get_field( 'month' );
 ?>
 
@@ -25,6 +24,3 @@ $month    = get_field( 'month' );
             <span class="btn btn-default-outline mb-4 no-br pl-5 pr-5"><?= $month ?></span>
         <?php endif; ?>
         <h2 class="text-uppercase mb-3"><?= $post->post_title ?> <?php if ( $subtitle ): echo '<span class="default-color"> - '. $subtitle .'</span>'; endif; ?></h2>
-        <?php if ( $tagline ): ?>
-            <h3 class="default-color"><?= $tagline ?></h3>
-        <?php endif; ?>
