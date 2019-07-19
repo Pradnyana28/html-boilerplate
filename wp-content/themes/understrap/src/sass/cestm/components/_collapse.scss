@@ -1,0 +1,26 @@
+.cestm-collapse {
+    .collapse-item {
+        border-top: 1px solid $mid-grey;
+        transition: 0.4s;
+
+        a {
+            color: #000000;
+            text-decoration: none;
+
+            &:after {
+                content: '+';
+                color: $brand-color;
+                float: right;
+            }
+
+            &.collapse-opened:after {
+                content: '\2013';
+            }
+        }
+
+        .collapse-content {
+            transition: all 0.4s ease-out;
+            margin-top: 3rem !important;
+        }
+    }
+}

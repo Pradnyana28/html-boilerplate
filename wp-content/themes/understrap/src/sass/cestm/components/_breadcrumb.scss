@@ -1,22 +1,22 @@
 .cestm-breadcrumbs {
-    background-image: $gradient-brand-color;
+    background-image: $gradient-to-top-brand-color;
 
     ul {
         overflow: hidden;
-        border-bottom: 4px solid $light-grey;
+        border-bottom: 2px solid $light-grey;
 
         li {
             float: left;
             padding: 14px 20px;
-            border-right: 4px solid $light-grey;
+            border-right: 2px solid $light-grey;
             color: #ffffff;
             transition: 0.4s;
 
             a {
                 text-decoration: none;
                 &:after {
-                    content: ' \003e';
-                    font-size: 10px;
+                    content: ' \203A';
+                    font-size: 15px;
                     margin-left: 10px;
                 }
             }
