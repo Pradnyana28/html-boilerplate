@@ -29,7 +29,7 @@ $link_two        = get_field( 'link_two' );
 $image_two       = get_field( 'section_decouvrir' )[ 'image_two' ];
 // program
 $show_program    = get_field( 'show_program' );
-$locations       = get_field( 'locations' );
+$institutions    = get_field( 'institutions' );
 ?>
 
 <?php if ( is_front_page() ) : ?>
@@ -52,7 +52,7 @@ $locations       = get_field( 'locations' );
                         <p><?= $description_one ?></p>
                         <?php if ( $link_one ): ?>
                             <div class="d-block">
-                                <a href="<?= $link_one[ 'url' ] ?>" target="<?= $link_one[ 'target' ] ?>" class="text-uppercase btn btn-default btn-hover-outline"><?= $link_one[ 'title' ] ?></a>
+                                <a href="<?= $link_one[ 'url' ] ?>" target="<?= $link_one[ 'target' ] ?>" class="text-uppercase btn btn-default btn-hover-outline pl-5 pr-5"><?= $link_one[ 'title' ] ?></a>
                             </div>
                         <?php endif; ?>
 
@@ -76,7 +76,7 @@ $locations       = get_field( 'locations' );
                             <h2 class="section-subtitle mb-4"><?= $subtitle_two ?></h2>
                             <p class="mb-4"><?= $description_two ?></p>
                             <?php if( $link_two ): ?>
-                                <a href="<?= $link_two[ 'url' ] ?>" class="text-uppercase btn btn-default btn-hover-outline" target="<?= $link_two[ 'target' ] ?>"><?= $link_two[ 'title' ] ?></a>
+                                <a href="<?= $link_two[ 'url' ] ?>" class="text-uppercase btn btn-default btn-hover-outline pl-5 pr-5" target="<?= $link_two[ 'target' ] ?>"><?= $link_two[ 'title' ] ?></a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -92,7 +92,19 @@ $locations       = get_field( 'locations' );
             </div>
         <?php endif; ?>
 
-        
+        <?php if ( $institutions ): ?>
+            <!-- line separator -->
+            <div class="line-horizontal"></div>
+
+            <div id="maps-content" class="mb-5 no-mb-on-mobile">
+                <div class="container mt-5 mb-5">
+                    <h2 class="text-uppercase mb-5 text-center"><?= $institutions['title'] ?></h2>
+                    <p class="text-center subtitle-max"><?= $institutions['description'] ?></p>
+                </div>
+                
+                <?= cestm_add_marker_loop() ?>
+            </div>
+        <?php endif; ?>
 	</main><!-- #main -->
 
 </div><!-- #full-width-page-wrapper -->
