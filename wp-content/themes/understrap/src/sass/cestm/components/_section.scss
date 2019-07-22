@@ -4,6 +4,10 @@
     .section-title {
         font-weight: 700;
         margin-bottom: 20px;
+
+        span {
+            color: $brand-color;
+        }
     }
 
     .section-subtitle {

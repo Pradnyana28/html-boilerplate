@@ -9,7 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-?>
+$discovers = get_field( 'discover_section' );
+?> 
     </div>
 
     <div class="programs-benefit">
@@ -93,4 +94,26 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </div>
     </div> <!-- End of overflow-hidden -->
+</div>
+
+<!-- Discover Section -->
+<div class="discover-wrapper mt-5">
+    <?php if ($discovers): ?>
+    <div class="row section">
+        <div class="col-md-6">
+            <h1 class="section-title text-uppercase"><?= $discovers['section_title'] ?></h1>
+            <h3 class="section-tagline default-color text-uppercase"><?= $discovers['section_tagline'] ?></h3>
+            <p><?= $discovers['section_description'] ?></p>
+            <?php if ($discovers['section_button']): ?>
+            <div class="d-block">
+                <a href="<?= $discovers['section_button']['url'] ?>" target="<?= $discovers['section_button']['target'] ?>" class="text-uppercase btn btn-default btn-hover-outline pl-5 pr-5"><?= $discovers['section_button']['title'] ?></a>
+            </div>
+            <?php endif; ?>
+        </div>
+
+        <div class="col-md-6">
+            <img src="<?= $discovers['section_image']['sizes']['medium_large'] ?>" alt="" class="w-100">
+        </div>
+    </div>
+    <?php endif; ?>
 </div>
