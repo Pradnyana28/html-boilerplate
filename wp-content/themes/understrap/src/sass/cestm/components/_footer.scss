@@ -42,4 +42,11 @@
 
 .footer-copyright {
     background-image: $gradient-brand-color;
+
+    ul {
+        li {
+            float: left;
+            padding: 0 10px;
+        }
+    }
 }
