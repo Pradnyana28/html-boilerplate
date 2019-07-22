@@ -55,7 +55,7 @@ if ( ! function_exists( 'understrap_add_site_info' ) ) {
 add_action( 'genesis_entry_content', 'cestm_add_marker_loop' );
 function cestm_add_marker_loop() {
 	$args = array(
-		'post_type'      => 'programs',
+		'post_type'      => 'institutions',
 		'posts_per_page' => -1,
 	);
 	$the_query = new WP_Query($args);
