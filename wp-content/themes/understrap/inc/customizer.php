@@ -134,6 +134,87 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 } // endif function_exists( 'understrap_theme_customize_register' ).
 add_action( 'customize_register', 'understrap_theme_customize_register' );
 
+if ( ! function_exists( 'understrap_navigation_customize_register' ) ) {
+	function understrap_navigation_customize_register( $wp_customize ) {
+
+		// Navigation setting.
+		$wp_customize->add_section(
+			'understrap_navigation_customize_options',
+			array(
+				'title'       => __( 'Navigation Options', 'understrap' ),
+				'capability'  => 'edit_theme_options',
+				'description' => __( 'Add optional setting for navigation', 'understrap' ),
+				'priority'    => 161,
+			)
+		);
+
+		$wp_customize->add_setting(
+			'understrap_show_extra_button',
+			[
+				'default' => true
+			]
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_show_extra_button',
+				array(
+					'label'       => __( 'Show Extra Button', 'understrap' ),
+					'section'     => 'understrap_navigation_customize_options',
+					'settings'    => 'understrap_show_extra_button',
+					'type'        => 'checkbox',
+					'priority'    => '10',
+				)
+			)
+		);
+
+		$wp_customize->add_setting(
+			'understrap_extra_button_name',
+			[
+				'default' => 'Contact Us'
+			]
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_extra_button_name',
+				array(
+					'label'       => __( 'Extra Button Name', 'understrap' ),
+					'section'     => 'understrap_navigation_customize_options',
+					'settings'    => 'understrap_extra_button_name',
+					'type'        => 'text',
+					'priority'    => '10',
+				)
+			)
+		);
+
+		$wp_customize->add_setting(
+			'understrap_extra_button_link',
+			[
+				'default' => '/contact'
+			]
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_extra_button_link',
+				array(
+					'label'       => __( 'Extra Button Link', 'understrap' ),
+					'section'     => 'understrap_navigation_customize_options',
+					'settings'    => 'understrap_extra_button_link',
+					'type'        => 'text',
+					'priority'    => '12',
+				)
+			)
+		);
+
+	}
+}
+add_action( 'customize_register', 'understrap_navigation_customize_register' );
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */

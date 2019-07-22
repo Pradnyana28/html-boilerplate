@@ -11,11 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$container = get_theme_mod( 'understrap_container_type' );
-$extra_button = '/contact'; // get_field( 'extra_button' )
-$custom_logo_id = get_theme_mod( 'custom_logo', 0 );
-$navigation_logo = wp_get_attachment_image_src( $custom_logo_id, 'full' );
-$navigation_logo = $navigation_logo[0];
+$container 			= get_theme_mod( 'understrap_container_type' );
+$show_extra_button  = get_theme_mod( 'understrap_show_extra_button', true );
+$extra_button_name  = get_theme_mod( 'understrap_extra_button_name', 'Contact Us' );
+$extra_button_link	= get_theme_mod( 'understrap_extra_button_link', '/contacts' );
+$custom_logo_id 	= get_theme_mod( 'custom_logo', 0 );
+$navigation_logo 	= wp_get_attachment_image_src( $custom_logo_id, 'full' );
+$navigation_logo 	= $navigation_logo[0];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -74,7 +76,7 @@ $navigation_logo = $navigation_logo[0];
 						</button>
 					</div>
 			
-					<div class="col-xl-<?= $extra_button ? '7' : '9' ?> d-flex align-items-center col-lg-8 col-md-12">
+					<div class="col-xl-<?= $show_extra_button ? '7' : '9' ?> d-flex align-items-center col-lg-8 col-md-12">
 						<!-- The WordPress Menu goes here -->
 						<?php wp_nav_menu(
 							array(
@@ -90,9 +92,9 @@ $navigation_logo = $navigation_logo[0];
 						); ?>
 					</div>
 			
-					<?php if ( $extra_button ): ?>
+					<?php if ( $show_extra_button ): ?>
 						<div class="col-xl-2 col-lg-2 d-flex align-items-center">
-							<a href="<?= $extra_button ?>" class="contact-us-btn btn d-block w-100 btn-default-outline">Contact Us</a>
+							<a href="<?= $extra_button_link ?>" class="contact-us-btn btn d-block w-100 btn-default-outline"><?= $extra_button_name ?></a>
 						</div>
 					<?php endif; ?>
 				</div>
