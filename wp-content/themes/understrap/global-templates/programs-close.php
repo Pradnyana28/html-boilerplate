@@ -65,12 +65,29 @@ if ( ! defined( 'ABSPATH' ) ) {
                     How To Register
                 </a>
                 <div class="collapse collapse-content" id="howToRegister">
-                    <?php
-                        // $how_to_register = get_field( 'how_to_register' );
-                        // echo "<pre>";
-                        // print_r($how_to_register);
-                        // echo "</pre>";
-                    ?>
+                    <?php $how_to_register = get_field( 'how_to_register' ) ?>
+                    <?php $no = 0 ?>
+                    <?php foreach ($how_to_register as $guide => $data): ?>
+                        <?php $no++ ?>
+                        <?php if ($data['title']): ?>
+                        <div class="register-wrapper">
+                            <h5 class="guide-title"><span class="guide-no"><?= $no ?></span> <?= $data['title'] ?></h5>
+                            <p class="guide-description"><?= $data['description'] ?></p>
+                            <?php if ( !empty( $data['button_link'] ) ): ?>
+                                <button link="<?= $data['button_link'] ?>" class="btn pl-5 pr-5 btn-default btn-hover-outline"><?= $data['button_text'] ?></button>
+                            <?php endif; ?>
+
+                            <?php if ( !empty( $data['additional_button_link'] ) ): ?>
+                                <span class="mr-3 ml-3">or</span>
+                                <a href="<?= $data['additional_button_link'] ?>" class="btn pl-5 pr-5 btn-default-outline"><?= $data['additional_button_text'] ?></a>
+                            <?php endif; ?>
+
+                            <?php if ( $data['show_institutions'] ): ?>
+                                <?= cestm_add_marker_loop() ?>
+                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

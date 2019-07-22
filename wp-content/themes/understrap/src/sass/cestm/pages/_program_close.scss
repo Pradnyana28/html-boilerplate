@@ -1,0 +1,34 @@
+#howToRegister {
+    .register-wrapper {
+        margin-bottom: 6%;
+
+        &:nth-last-child() {
+            margin-bottom: 0;
+        }
+
+        .guide-no {
+            font-size: 12px;
+            border: 1px solid $brand-color;
+            border-radius: 50%;
+            padding: 2px 5px;
+            margin-right: 5px;
+            top: -2px;
+            position: relative;
+        }
+
+        .guide-title {
+            color: $brand-color;
+            font-size: 15px;
+        }
+
+        .guide-description {
+            font-size: 13px;
+            color: rgb(114, 115, 114);
+        }
+
+        .map-container {
+            margin-left: -25px;
+            margin-right: -25px;
+        }
+    }
+}
