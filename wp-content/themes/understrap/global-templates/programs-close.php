@@ -74,7 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <h5 class="guide-title"><span class="guide-no"><?= $no ?></span> <?= $data['title'] ?></h5>
                             <p class="guide-description"><?= $data['description'] ?></p>
                             <?php if ( !empty( $data['button_link'] ) ): ?>
-                                <button link="<?= $data['button_link'] ?>" class="btn pl-5 pr-5 btn-default btn-hover-outline"><?= $data['button_text'] ?></button>
+                                <a href="<?= $data['button_link'] ?>" class="btn pl-5 pr-5 btn-default btn-hover-outline"><?= $data['button_text'] ?></a>
                             <?php endif; ?>
 
                             <?php if ( !empty( $data['additional_button_link'] ) ): ?>
