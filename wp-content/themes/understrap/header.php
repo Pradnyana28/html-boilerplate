@@ -13,7 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $container = get_theme_mod( 'understrap_container_type' );
 $extra_button = '/contact'; // get_field( 'extra_button' )
-$navigation_logo = 'http://cestm-html.staging/wp-content/uploads/2019/07/cestm-logo.svg'; // get_field( 'logo' )
+$custom_logo_id = get_theme_mod( 'custom_logo', 0 );
+$navigation_logo = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+$navigation_logo = $navigation_logo[0];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
