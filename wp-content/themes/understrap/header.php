@@ -18,6 +18,12 @@ $extra_button_link	= get_theme_mod( 'understrap_extra_button_link', '/contacts' 
 $custom_logo_id 	= get_theme_mod( 'custom_logo', 0 );
 $navigation_logo 	= wp_get_attachment_image_src( $custom_logo_id, 'full' );
 $navigation_logo 	= $navigation_logo[0];
+// social accounts
+$container 			= get_theme_mod( 'understrap_container_type' );
+$social_facebook 	= get_theme_mod( 'understrap_social_facebook_account' );
+$social_instagram 	= get_theme_mod( 'understrap_social_instagram_account' );
+$social_twitter 	= get_theme_mod( 'understrap_social_twitter_account' );
+$social_pinterest 	= get_theme_mod( 'understrap_social_pinterest_account' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -45,6 +51,22 @@ $navigation_logo 	= $navigation_logo[0];
 
 	<div class="navbar-top d-flex">
 		<div class="container">
+			<div class="social-accounts-wrapper pull-right">
+				<ul>
+					<?php if ( $social_facebook ): ?>
+						<li><a href="<?= $social_facebook ?>" target="_blank" class="text-white"><i class="fa fa-facebook"></i></a></li>
+					<?php endif; ?>
+					<?php if ( $social_instagram ): ?>
+						<li><a href="<?= $social_instagram ?>" target="_blank" class="text-white"><i class="fa fa-instagram"></i></a></li>
+					<?php endif; ?>
+					<?php if ( $social_twitter ): ?>
+						<li><a href="<?= $social_twitter ?>" target="_blank" class="text-white"><i class="fa fa-twitter"></i></a></li>
+					<?php endif; ?>
+					<?php if ( $social_pinterest ): ?>
+						<li><a href="<?= $social_pinterest ?>" target="_blank" class="text-white"><i class="fa fa-twitter"></i></a></li>
+					<?php endif; ?>
+				</ul>
+			</div>
 			<?php wp_nav_menu(
 				array(
 					'theme_location'  => 'topbar',

@@ -215,6 +215,118 @@ if ( ! function_exists( 'understrap_navigation_customize_register' ) ) {
 }
 add_action( 'customize_register', 'understrap_navigation_customize_register' );
 
+if ( ! function_exists( 'understrap_social_media_accounts_options' ) ) {
+	function understrap_social_media_accounts_options( $wp_customize ) {
+
+		$wp_customize->add_section(
+			'understrap_social_media_accounts',
+			[
+				'title' 		=> __('Social Media Accounts', 'understrap'),
+				'capability' 	=> 'edit_theme_options',
+				'description' 	=> __( 'Connect your social media account links here.' ),
+				'priority'		=> 162
+			]
+		);
+
+		$wp_customize->add_setting(
+			'understrap_social_facebook_account'
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_social_facebook_account',
+				array(
+					'label'			=> __( 'Facebook Account URL', 'understrap' ),
+					'description'	=> __( 'Full facebook account link' ),
+					'section'		=> 'understrap_social_media_accounts',
+					'settings'		=> 'understrap_social_facebook_account',
+					'type'			=> 'text',
+					'priority'		=> '10'
+				)
+			)
+		);
+
+		$wp_customize->add_setting(
+			'understrap_social_twitter_account'
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_social_twitter_account',
+				array(
+					'label'			=> __( 'Twitter Account URL', 'understrap' ),
+					'description'	=> __( 'Full twitter account link' ),
+					'section'		=> 'understrap_social_media_accounts',
+					'settings'		=> 'understrap_social_twitter_account',
+					'type'			=> 'text',
+					'priority'		=> '11'
+				)
+			)
+		);
+
+		$wp_customize->add_setting(
+			'understrap_social_pinterest_account'
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_social_pinterest_account',
+				array(
+					'label'			=> __( 'Pinterest Account URL', 'understrap' ),
+					'description'	=> __( 'Full pinterest account link' ),
+					'section'		=> 'understrap_social_media_accounts',
+					'settings'		=> 'understrap_social_pinterest_account',
+					'type'			=> 'text',
+					'priority'		=> '12'
+				)
+			)
+		);
+
+		$wp_customize->add_setting(
+			'understrap_social_youtube_account'
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_social_youtube_account',
+				array(
+					'label'			=> __( 'Youtube Account URL', 'understrap' ),
+					'description'	=> __( 'Full youtube account link' ),
+					'section'		=> 'understrap_social_media_accounts',
+					'settings'		=> 'understrap_social_youtube_account',
+					'type'			=> 'text',
+					'priority'		=> '13'
+				)
+			)
+		);
+
+		$wp_customize->add_setting(
+			'understrap_social_instagram_account'
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'understrap_social_youtube_account',
+				array(
+					'label'			=> __( 'Instagram Account URL', 'understrap' ),
+					'description'	=> __( 'Full instagram account link' ),
+					'section'		=> 'understrap_social_media_accounts',
+					'settings'		=> 'understrap_social_instagram_account',
+					'type'			=> 'text',
+					'priority'		=> '14'
+				)
+			)
+		);
+
+	}
+}
+add_action( 'customize_register', 'understrap_social_media_accounts_options' );
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
