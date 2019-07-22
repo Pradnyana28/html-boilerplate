@@ -3,6 +3,10 @@
     transition: 0.4s;
     -webkit-box-shadow: 0 0 20px 0 rgba(31, 10, 72, 0.16);
     box-shadow: 0 0 20px 0 rgba(31, 10, 72, 0.16);
+
+    &.border-top {
+        border-top: 4px solid $brand-color !important;
+    }
     
     .card-image {
         height: 240px;

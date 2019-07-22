@@ -10436,7 +10436,18 @@ if (!Function.prototype.bind) {
     } else {
       $(this).addClass('collapse-opened');
     }
-  });
+  }); // Owl Carousel
+  // $(".owl-carousel").owlCarousel({
+  //     loop: true,
+  //     margin: 10,
+  //     nav: false,
+  //     responsive: {
+  //         0: { items: 1 },
+  //         600: { items: 3 },
+  //         1000: { items: 3 }
+  //     }
+  // });
+  // Institutions maps
 
   function new_map($el) {
     var $markers = $el.find('.marker');
