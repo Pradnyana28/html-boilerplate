@@ -57,3 +57,31 @@ function add_file_types_to_uploads($file_types){
 	return $file_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads');
+
+// First we check to see if acf_add_options_page is a function.
+// If it is not, then we probably do not have ACF Pro installed
+if( function_exists('acf_add_options_page') ) {
+	// Let's add our Options Page
+	acf_add_options_page(array(
+		'page_title'    => 'Theme Options',
+		'menu_title'    => 'Theme Options',
+		'menu_slug'     => 'theme-options',
+		'capability'    => 'edit_posts'
+	));
+
+	// If we want to add multiple sections to our Options Page
+	// we can do so with an Options Sub Page.
+	acf_add_options_sub_page(array(
+		'page_title'    => "Register Guides",
+		'parent_slug'   => 'theme-options',  // 'menu_slug' on the parent options page
+		'menu_title'    => "Register Guides",
+		'menu_slug'     => 'register-guides',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title'    => 'Discover Montreal',
+		'parent_slug'   => 'theme-options',
+		'menu_title'    => 'Discover Montreal',
+		'menu_slug'     => 'discover-montreal',
+	));
+}

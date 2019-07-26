@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$discovers = get_field( 'discover_section' );
+$discovers = get_field( 'discover_section', 'option' );
 ?> 
     </div>
 
@@ -66,7 +66,7 @@ $discovers = get_field( 'discover_section' );
                     How To Register
                 </a>
                 <div class="collapse collapse-content" id="howToRegister">
-                    <?php $how_to_register = get_field( 'how_to_register' ) ?>
+                    <?php $how_to_register = get_field( 'how_to_register', 'option' ) ?>
                     <?php $no = 0 ?>
                     <?php foreach ($how_to_register as $guide => $data): ?>
                         <?php $no++ ?>
