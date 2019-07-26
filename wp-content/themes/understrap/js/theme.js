@@ -10447,7 +10447,18 @@ if (!Function.prototype.bind) {
   //         1000: { items: 3 }
   //     }
   // });
-  // Institutions maps
+  // Show detail of institution
+
+  $('.institution-select').on('change', function () {
+    var that = $(this);
+    var value = that.val();
+    var option = $('option:selected', this);
+    var dataTitle = option.data('title');
+    var dataDesc = option.data('description'); // result wrapper
+
+    var resultWrapper = that.next('.institution-selected-result');
+    resultWrapper.html('<h3 class="default-color text-uppercase">' + dataTitle + '</h3><p>' + dataDesc + '</p>');
+  }); // Institutions maps
 
   function new_map($el) {
     var $markers = $el.find('.marker');

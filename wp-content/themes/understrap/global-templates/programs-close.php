@@ -84,6 +84,8 @@ $discovers = get_field( 'discover_section' );
                             <?php endif; ?>
 
                             <?php if ( $data['show_institutions'] ): ?>
+                                <!-- Institution dropdown -->
+                                <?= display_institution_dropdown() ?>
                                 <?= cestm_add_marker_loop() ?>
                             <?php endif; ?>
                         </div>
