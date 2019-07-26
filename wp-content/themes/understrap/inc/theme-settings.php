@@ -67,6 +67,29 @@ if ( ! function_exists( 'cestm_breadcrumbs' ) ) {
 	}
 }
 
+if ( ! function_exists( 'show_breadcrumb' ) ) {
+	function show_breadcrumb($name, $type){
+		$list = "";
+		$home = get_bloginfo("home");
+		if ($type && $name){
+			$ans = get_term_by('name', $name, $type);
+			$parentID = $ans->parent;
+			while ($parentID > 0){
+				$parent = get_term_by('id', $parentID, $type);
+				$is_clickable = get_field( 'is_clickable', $parent );
+				$url = $home."/".$type."/".$parent->slug;
+				$link_clickable = $is_clickable ? "<a href='".$url."' rel='tag' class='text-white ". $is_clickable ."'>".$parent->name."</a>" : $parent->name;
+				$list = "<li>{$link_clickable}</li>".$list;
+				$parentID = $parent->parent;
+			}
+			$url = $home."/".$type."/".$ans->slug;
+			$list = $list."<li class='hide-on-mobile'>".$ans->name."</li>";
+		}   
+	
+		if ($list) echo "<ul>".$list."</ul>";
+	}
+}
+
 if ( ! function_exists( 'related_programs' ) ) {
 	function related_programs( $post, $taxonomy, $limits = 3 ) {
 		$custom_taxterms = wp_get_object_terms( $post->ID, $taxonomy, ['fields' => 'ids'] );
