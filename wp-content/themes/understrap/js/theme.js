@@ -10494,6 +10494,7 @@ if (!Function.prototype.bind) {
 
     var marker = new google.maps.Marker({
       position: latlng,
+      icon: '/wp-content/themes/understrap/img/marker.png',
       map: map
     }); // add to array
 
