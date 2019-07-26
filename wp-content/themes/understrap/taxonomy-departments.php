@@ -15,10 +15,12 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 $q = get_queried_object();
 $discovers = get_field( 'discover_section', 'option' );
+$is_dec = get_field( 'is_dec_aec', $q );
+$program_type = get_field( 'program_type', $q );
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
-	<div class="container mb-5">
+	<div class="container mb-5 programs-benefit">
         <div class="cestm-wrapper">
             <div class="overflow-hidden br-4">
             <div class="cestm-breadcrumbs">
@@ -32,6 +34,40 @@ $discovers = get_field( 'discover_section', 'option' );
                 <?php the_field( 'content', $q ) ?>
             </div>
         </div>
+
+        <?php if ( $is_dec ): ?>
+        <!-- dec -->
+        <div id="accordion" class="cestm-collapse">
+            <div class="p-4 collapse-item">
+                <a class="collapse-button d-block" data-parent="#accordion" data-toggle="collapse" href="#dec" role="button" aria-expanded="false" aria-controls="dec">
+                    <?= $program_type['dec_title'] ?>
+                </a>
+                <div class="collapse collapse-content" id="dec">
+                    <?= $program_type['dec_content'] ?>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <?php get_post_by_taxonomy( ['dec'], $q->taxonomy ) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- aec -->
+            <div class="p-4 collapse-item">
+                <a class="collapse-button d-block" data-parent="#accordion" data-toggle="collapse" href="#aec" role="button" aria-expanded="false" aria-controls="aec">
+                    <?= $program_type['aec_title'] ?>
+                </a>
+                <div class="collapse collapse-content" id="aec">
+                    <?= $program_type['aec_content'] ?>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <?php get_post_by_taxonomy( ['aec'], $q->taxonomy ) ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
     </div>
 
     <div class="container mb-5">

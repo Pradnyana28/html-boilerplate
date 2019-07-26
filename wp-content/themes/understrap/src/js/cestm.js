@@ -144,4 +144,12 @@
         map.setCenter(gMarkers[dataMarker].getPosition());
         google.maps.event.trigger(gMarkers[dataMarker], 'click');
     });
+
+    // go to program button
+    $('.program-button').on('click', function() {
+        var selects = $(this).prev('.program-selects');
+        var programOption = $('option:selected', selects);
+        var selectedOption = programOption.data('link');
+        window.location.href = selectedOption;
+    });
 }(jQuery))

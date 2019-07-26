@@ -158,3 +158,33 @@ if ( ! function_exists('display_institution_dropdown') ) {
 		wp_reset_postdata();
 	}
 }
+
+if ( ! function_exists('get_post_by_taxonomy') ) {
+	function get_post_by_taxonomy($terms, $taxonomy) {
+		$args = array(
+			'post_type' => 'programs',
+			'tax_query' => array(
+				array(
+					'taxonomy' => $taxonomy,
+					'field' => 'slug',
+					'terms' => $terms
+				)
+			),
+		);
+		$related = new WP_Query( $args );
+		// loop post
+		if ( $related->have_posts() ) {
+			echo "<select class='form-control custom-select program-selects col-12 w-100'>";
+			while ( $related->have_posts() ) : $related->the_post();
+				$title = get_the_title();
+				$id = get_the_ID();
+				$link = get_the_permalink();
+			?>
+				<option value="<?= $id ?>" data-link="<?= $link ?>"><?= $title ?></option>
+			<?php
+			endwhile;
+			echo "</select>";
+			echo '<button class="program-button d-block mt-3 btn btn-default btn-hover-outline pl-5 pr-5 col-12">Voir le programme</button>';
+		}
+	}
+}
