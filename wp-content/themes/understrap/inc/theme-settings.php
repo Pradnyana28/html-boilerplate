@@ -48,11 +48,15 @@ if ( ! function_exists( 'cestm_breadcrumbs' ) ) {
 		) );
 		$links = array();
 		foreach ( $terms as $term ) {
-			$link =  $link = get_term_link( $term, $taxonomy );
+			$is_clickable    = get_field( 'is_clickable', $term );
+			$link = get_term_link( $term, $taxonomy );
+			$li_class = $is_clickable ? 'with-hover' : '';
+			$link_clickable  = $is_clickable ? '<a href="'. esc_attr( $link ) .'" rel="tag" class="text-white">'. esc_html( $term->name ) .'</a>' : esc_html( $term->name );
+
 			$links[] = sprintf(
-				'<li class="with-hover"><a href="%s" rel="tag" class="text-white">%s</a></li>',
-				esc_attr( $link ),
-				esc_html( $term->name )
+				'<li class="%s">%s</li>',
+				$li_class,
+				$link_clickable
 			);
 		}
 		$links[] = "<li class='hide-on-mobile'>{$post->post_title}</li>";

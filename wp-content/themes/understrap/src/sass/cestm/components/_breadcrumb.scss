@@ -14,20 +14,26 @@
 
             a {
                 text-decoration: none;
-                &:after {
-                    content: ' \203A';
-                    font-size: 15px;
-                    margin-left: 10px;
-                }
+            }
+
+            &:after {
+                content: ' \203A';
+                font-size: 15px;
+                margin-left: 10px;
             }
 
             &:last-child {
                 border-right: none;
+
+                &:after {
+                    content: '' !important;
+                }
             }
 
             &.with-hover:hover {
-                background-color: #ffffff;
-                a { color: $brand-color !important; }
+                a { 
+                    border-bottom: 2px solid #ffffff; 
+                }
             }
         }
     }
