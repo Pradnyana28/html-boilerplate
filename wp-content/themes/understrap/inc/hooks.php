@@ -67,8 +67,8 @@ function cestm_add_marker_loop() {
         if( !empty($location) ) {
         ?>
         	<div class="marker" data-id="<?= $id ?>" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
-				<h4><a href="<?php the_permalink(); ?>" rel="bookmark"> <?php the_title(); ?></a></h4>
-				<p class="address"><?php echo $location['address']; ?></p>
+				<h4 class="text-center"><a href="<?php the_permalink(); ?>" class="default-color text-uppercase" rel="bookmark"> <?php the_title(); ?></a></h4>
+				<p class="text-center"><?php echo $location['address']; ?></p>
         	</div>
 	<?php
         }
