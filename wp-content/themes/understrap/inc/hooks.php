@@ -61,11 +61,12 @@ function cestm_add_marker_loop() {
 	$the_query = new WP_Query($args);
 	echo "<div class='map-container'><div class='wrap'><div class='acf-map'>";
 	while ( $the_query->have_posts() ) : $the_query->the_post();
-        $location = get_field('locations');
+		$location = get_field('locations');
+		$id = get_the_ID();
         $title = get_the_title(); // Get the title
         if( !empty($location) ) {
         ?>
-        	<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
+        	<div class="marker" data-id="<?= $id ?>" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
 				<h4><a href="<?php the_permalink(); ?>" rel="bookmark"> <?php the_title(); ?></a></h4>
 				<p class="address"><?php echo $location['address']; ?></p>
         	</div>

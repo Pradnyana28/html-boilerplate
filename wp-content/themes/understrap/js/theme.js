@@ -10421,7 +10421,9 @@ if (!Function.prototype.bind) {
   }();
 }).call(this);
 (function ($) {
-  "use strict"; // PRELOADER
+  "use strict"; // global variables
+
+  var gMarkers = []; // PRELOADER
 
   $(window).on('load', function () {
     var preloader = $('.preloader');
@@ -10447,18 +10449,7 @@ if (!Function.prototype.bind) {
   //         1000: { items: 3 }
   //     }
   // });
-  // Show detail of institution
-
-  $('.institution-select').on('change', function () {
-    var that = $(this);
-    var value = that.val();
-    var option = $('option:selected', this);
-    var dataTitle = option.data('title');
-    var dataDesc = option.data('description'); // result wrapper
-
-    var resultWrapper = that.next('.institution-selected-result');
-    resultWrapper.html('<h3 class="default-color text-uppercase">' + dataTitle + '</h3><p>' + dataDesc + '</p>');
-  }); // Institutions maps
+  // Institutions maps
 
   function new_map($el) {
     var $markers = $el.find('.marker');
@@ -10497,14 +10488,18 @@ if (!Function.prototype.bind) {
 
   function add_marker($marker, map) {
     // var
-    var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng')); // create marker
+    var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng')); // add marker id to institution options
+
+    var markerOption = $('#institution-select').find('.' + $marker.data('id')); // create marker
 
     var marker = new google.maps.Marker({
       position: latlng,
       map: map
     }); // add to array
 
-    map.markers.push(marker); // if marker contains HTML, add it to an infoWindow
+    map.markers.push(marker);
+    gMarkers.push(marker);
+    markerOption.attr('data-marker', map.markers.length - 1); // if marker contains HTML, add it to an infoWindow
 
     if ($marker.html()) {
       // create info window
@@ -10545,5 +10540,20 @@ if (!Function.prototype.bind) {
       // create map
       map = new_map($(this));
     });
+  }); // Show detail of institution
+
+  $('.institution-select').on('change', function () {
+    var that = $(this);
+    var value = that.val();
+    var option = $('option:selected', this);
+    var dataTitle = option.data('title');
+    var dataDesc = option.data('description');
+    var dataMarker = option.data('marker'); // result wrapper
+
+    var resultWrapper = that.next('.institution-selected-result');
+    resultWrapper.html('<h3 class="default-color text-uppercase">' + dataTitle + '</h3><p>' + dataDesc + '</p>'); // center map and open info window
+
+    map.setCenter(gMarkers[dataMarker].getPosition());
+    google.maps.event.trigger(gMarkers[dataMarker], 'click');
   });
 })(jQuery);

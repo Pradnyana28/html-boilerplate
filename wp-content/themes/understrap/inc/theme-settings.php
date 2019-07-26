@@ -120,14 +120,14 @@ if ( ! function_exists('display_institution_dropdown') ) {
 			'posts_per_page' => -1,
 		);
 		$the_query = new WP_Query($args);
-		echo "<select class='form-control custom-select institution-select'>";
+		echo "<select id='institution-select' class='form-control custom-select institution-select'>";
 		echo "<option value='' selected disabled>Select institutions</option>";
 		while ( $the_query->have_posts() ) : $the_query->the_post();
 			$id = get_the_ID();
 			$title = get_the_title();
 			$content = wp_trim_words( get_the_content() );
 			?>
-				<option value="<?= $id ?>" data-title="<?= $title ?>" data-description="<?= $content ?>"><?= $title ?></option>
+				<option value="<?= $id ?>" class='<?= $id ?>' data-title="<?= $title ?>" data-description="<?= $content ?>"><?= $title ?></option>
 			<?php
 		endwhile;
 		echo '</select>';
