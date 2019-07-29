@@ -17,6 +17,28 @@
             width: 150px;
             padding: 10px;
         }
+        .main-menu ul {
+            float: none;
+            overflow: hidden;
+            li {
+                float: none;
+                padding: 0 !important;
+                text-align: center;
+                a {
+                    padding: 20px !important;
+                    color: #FFF;
+                    font-size: 20px;
+                    display: block;
+                }
+
+                &.current_page_item > a,
+                &.current-menu-item > a,
+                &.current_page_ancestor > a,
+                &.current-menu-ancestor > a {
+                    border-bottom: none;
+                }
+            }
+        }
     }
 
     .hide-on-desktop { display: block; }
@@ -70,6 +92,10 @@
 
     .hide-on-mobile { display: block; }
     .hide-on-desktop { display: none; }
+
+    .main-menu .hide-on-mobile {
+        display: none;
+    }
 
     .no-mt-on-mobile {
         &.mt-5 { margin-top: 3rem !important; }

@@ -152,4 +152,16 @@
         var selectedOption = programOption.data('link');
         window.location.href = selectedOption;
     });
+
+    // collapse button
+    $('#navbarNavDropdown').on('show.bs.collapse', function() {
+        $('.menu-button').addClass('active-burger');
+        $('body').addClass('navbar-open');
+        $('#white-logo').addClass('collapse-logo-wrapper');
+    });
+    $('#navbarNavDropdown').on('hide.bs.collapse', function () {
+        $('.menu-button').removeClass('active-burger');
+        $('body').removeClass('navbar-open');
+        $('#white-logo').removeClass('collapse-logo-wrapper');
+    });
 }(jQuery))

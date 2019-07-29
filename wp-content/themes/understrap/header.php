@@ -24,6 +24,7 @@ $social_facebook 	= get_theme_mod( 'understrap_social_facebook_account' );
 $social_instagram 	= get_theme_mod( 'understrap_social_instagram_account' );
 $social_twitter 	= get_theme_mod( 'understrap_social_twitter_account' );
 $social_pinterest 	= get_theme_mod( 'understrap_social_pinterest_account' );
+$logo_white			= get_field( 'logo_white', 'options' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -102,12 +103,27 @@ $social_pinterest 	= get_theme_mod( 'understrap_social_pinterest_account' );
 			
 					<div class="col-xl-<?= $show_extra_button ? '7' : '9' ?> d-flex align-items-center col-lg-8 col-md-12">
 						<!-- The WordPress Menu goes here -->
+						<div id="white-logo" class="hide-on-mobile hide-on-desktop">
+							<img src="<?= $logo_white['sizes']['medium_large'] ?>" alt="">
+						</div>
 						<?php wp_nav_menu(
 							array(
 								'theme_location'  => 'primary',
-								'container_class' => 'main-menu collapse d-lg-block',
-								'container_id'    => 'navbarNavDropdown',
+								'container_class' => 'main-menu d-lg-block hide-on-mobile',
+								'container_id'    => '',
 								'menu_class'      => '',
+								'fallback_cb'     => '',
+								'menu_id'         => '',
+								'depth'           => 2,
+								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+							)
+						); ?>
+						<?php wp_nav_menu(
+							array(
+								'theme_location'  => 'mobile-menu',
+								'container_class' => 'main-menu collapse hide-on-desktop',
+								'container_id'    => 'navbarNavDropdown',
+								'menu_class'      => 'mobileMenuWrapper',
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'depth'           => 2,

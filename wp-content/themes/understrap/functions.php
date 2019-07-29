@@ -69,6 +69,13 @@ if( function_exists('acf_add_options_page') ) {
 		'capability'    => 'edit_posts'
 	));
 
+	acf_add_options_sub_page(array(
+		'page_title'    => 'General Setting',
+		'parent_slug'   => 'theme-options',
+		'menu_title'    => 'General Setting',
+		'menu_slug'     => 'general-setting',
+	));
+
 	// If we want to add multiple sections to our Options Page
 	// we can do so with an Options Sub Page.
 	acf_add_options_sub_page(array(
