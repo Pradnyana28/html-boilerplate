@@ -38,9 +38,7 @@ $institutions    = get_field( 'institutions' );
 
 
 <div class="wrapper" id="full-width-page-wrapper">
-
 	<main class="site-main" id="main" role="main">
-
 		<div class="container mt-5">
             <div class="row">
                 <!-- left side -->
@@ -55,23 +53,32 @@ $institutions    = get_field( 'institutions' );
                                 <a href="<?= $link_one[ 'url' ] ?>" target="<?= $link_one[ 'target' ] ?>" class="text-uppercase btn btn-default btn-hover-outline pl-5 pr-5"><?= $link_one[ 'title' ] ?></a>
                             </div>
                         <?php endif; ?>
-
-                        <!-- image illustration -->
-                        <?php if( $image_one ): ?>
-                            <img src="<?= $image_one[ 'sizes' ][ 'medium' ] ?>" alt="<?= $image_one[ 'caption' ] ?>" class="section-image align-left">
-                        <?php endif; ?>
                     </div>
                 </div>
 
                 <!-- right side -->
                 <div class="col-md-6">
+                    <div class="section align-right">
+                        <!-- image illustration -->
+                        <?php if( $image_one ): ?>
+                            <img src="<?= $image_one[ 'sizes' ][ 'medium' ] ?>" alt="<?= $image_one[ 'caption' ] ?>" class="section-image mt-0">
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
                     <div class="section">
                         <!-- image illustration -->
                         <?php if ( $image_two ): ?>
-                        <div class="align-right">
-                            <img src="<?= $image_two[ 'sizes' ][ 'medium' ] ?>" alt="<?= $image_two[ 'caption' ] ?>" class="section-image image-2x">
-                        </div>
+                            <img src="<?= $image_two[ 'sizes' ][ 'medium' ] ?>" alt="<?= $image_two[ 'caption' ] ?>" class="section-image image-2x mt-0">
                         <?php endif; ?>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="section">
                         <div class="mt-5">
                             <h2 class="section-subtitle mb-4"><?= $subtitle_two ?></h2>
                             <p class="mb-4"><?= $description_two ?></p>
@@ -106,7 +113,6 @@ $institutions    = get_field( 'institutions' );
             </div>
         <?php endif; ?>
 	</main><!-- #main -->
-
 </div><!-- #full-width-page-wrapper -->
 
 <?php get_footer(); ?>
