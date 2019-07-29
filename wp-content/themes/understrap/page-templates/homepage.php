@@ -43,7 +43,7 @@ $institutions    = get_field( 'institutions' );
             <div class="row">
                 <!-- left side -->
                 <div class="col-md-6">
-                    <div class="section">
+                    <div class="section hide-on-mobile">
                         <h2 class="section-subtitle default-color text-uppercase"><?= $subtitle_one ?></h2>
                         <h1 class="section-title text-uppercase"><?= $title_one ?></h1>
                         <h3 class="section-tagline default-color text-uppercase"><?= $tagline_one ?></h3>
@@ -57,19 +57,30 @@ $institutions    = get_field( 'institutions' );
                 </div>
 
                 <!-- right side -->
-                <div class="col-md-6">
+                <div class="col-md-6 d-inline no-pl-on-mobile no-pr-on-mobile">
                     <div class="section align-right">
                         <!-- image illustration -->
                         <?php if( $image_one ): ?>
-                            <img src="<?= $image_one[ 'sizes' ][ 'medium' ] ?>" alt="<?= $image_one[ 'caption' ] ?>" class="section-image mt-0">
+                            <img src="<?= $image_one[ 'sizes' ][ 'medium' ] ?>" alt="<?= $image_one[ 'caption' ] ?>" class="section-image m-0">
+                        <?php endif; ?>
+                    </div>
+                    <div class="section hide-on-desktop p-on-mobile">
+                        <h2 class="section-subtitle default-color text-uppercase"><?= $subtitle_one ?></h2>
+                        <h1 class="section-title text-uppercase"><?= $title_one ?></h1>
+                        <h3 class="section-tagline default-color text-uppercase"><?= $tagline_one ?></h3>
+                        <p><?= $description_one ?></p>
+                        <?php if ( $link_one ): ?>
+                            <div class="d-block">
+                                <a href="<?= $link_one[ 'url' ] ?>" target="<?= $link_one[ 'target' ] ?>" class="text-uppercase btn btn-default btn-hover-outline pl-5 pr-5"><?= $link_one[ 'title' ] ?></a>
+                            </div>
                         <?php endif; ?>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-6">
-                    <div class="section">
+                <div class="col-md-6 no-pl-on-mobile no-pr-on-mobile">
+                    <div class="section no-mb-on-mobile">
                         <!-- image illustration -->
                         <?php if ( $image_two ): ?>
                             <img src="<?= $image_two[ 'sizes' ][ 'medium' ] ?>" alt="<?= $image_two[ 'caption' ] ?>" class="section-image image-2x mt-0">
