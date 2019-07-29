@@ -85,7 +85,19 @@ if ($sub_terms) {
                 <?= $program_study['program_technic_content'] ?>
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <?php get_post_by_taxonomy( ['techniques'], $current->taxonomy ) ?>
+                        <select class='form-control custom-select program-selects col-12 w-100'>
+                        <?php 
+                            foreach ($sub_terms as $sub_term) {
+                                // try    to see all available data!
+                                if ($sub_term->parent == 7) {
+                                    // print_r($sub_term);
+                                    // echo get_term_link($sub_term);
+                                    echo '<option value="'. $sub_term->term_id .'" data-link="'. get_term_link($sub_term) .'">'.$sub_term->name.'</option>';
+                                }
+                            }
+                        ?>
+                        <select>
+                        <button class="program-button d-block mt-3 btn btn-default btn-hover-outline pl-5 pr-5 col-12">Voir le programme</button>
                     </div>
                 </div>
             </div>
