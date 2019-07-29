@@ -91,4 +91,11 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'    => 'Discover Montreal',
 		'menu_slug'     => 'discover-montreal',
 	));
+
+	acf_add_options_sub_page(array(
+		'page_title'    => 'Programme D\'etudes',
+		'parent_slug'   => 'theme-options',
+		'menu_title'    => 'Programme D\'etudes',
+		'menu_slug'     => 'programme-detudes',
+	));
 }

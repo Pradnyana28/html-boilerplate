@@ -36,7 +36,6 @@ $institutions    = get_field( 'institutions' );
   <?php get_template_part( 'global-templates/hero' ); ?>
 <?php endif; ?>
 
-
 <div class="wrapper" id="full-width-page-wrapper">
 	<main class="site-main" id="main" role="main">
 		<div class="container mt-5 no-mt-on-mobile">
@@ -61,7 +60,7 @@ $institutions    = get_field( 'institutions' );
                     <div class="section align-right">
                         <!-- image illustration -->
                         <?php if( $image_one ): ?>
-                            <img src="<?= $image_one[ 'sizes' ][ 'medium' ] ?>" alt="<?= $image_one[ 'caption' ] ?>" class="section-image m-0">
+                            <img src="<?= $image_one[ 'url' ] ?>" alt="<?= $image_one[ 'caption' ] ?>" class="section-image m-0">
                         <?php endif; ?>
                     </div>
                     <div class="section hide-on-desktop p-on-mobile">
@@ -83,7 +82,7 @@ $institutions    = get_field( 'institutions' );
                     <div class="section no-mb-on-mobile">
                         <!-- image illustration -->
                         <?php if ( $image_two ): ?>
-                            <img src="<?= $image_two[ 'sizes' ][ 'medium' ] ?>" alt="<?= $image_two[ 'caption' ] ?>" class="section-image image-2x mt-0">
+                            <img src="<?= $image_two[ 'url' ] ?>" alt="<?= $image_two[ 'caption' ] ?>" class="section-image image-2x mt-0">
                         <?php endif; ?>
                     </div>
                 </div>
@@ -102,13 +101,7 @@ $institutions    = get_field( 'institutions' );
             </div>
         </div>
 
-        <?php if ( $show_program ): ?>
-            <div class="container mt-5">
-                <h2 class="text-uppercase text-bold text-center">Nos Programmes D'etudes</h2>
-
-                <?php echo display_post_shortcode( [], $show_program ) ?>
-            </div>
-        <?php endif; ?>
+        <?php if ( $show_program ): get_template_part( 'global-templates/program-detudes' ); endif; ?>
 
         <?php if ( $institutions ): ?>
             <!-- line separator -->

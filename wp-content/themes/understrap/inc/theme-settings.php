@@ -68,12 +68,20 @@ if ( ! function_exists( 'cestm_breadcrumbs' ) ) {
 }
 
 if ( ! function_exists( 'show_breadcrumb' ) ) {
-	function show_breadcrumb($name, $type){
+	function show_breadcrumb($name, $type, $show_parent = false){
 		$list = "";
 		$home = get_bloginfo("home");
+
+			print_r($q);
 		if ($type && $name){
 			$ans = get_term_by('name', $name, $type);
 			$parentID = $ans->parent;
+
+			if ($show_parent) {
+				$q = get_queried_object();
+				$list = "<li>{$q->name}</li>";
+			}
+
 			while ($parentID > 0){
 				$parent = get_term_by('id', $parentID, $type);
 				$is_clickable = get_field( 'is_clickable', $parent );
