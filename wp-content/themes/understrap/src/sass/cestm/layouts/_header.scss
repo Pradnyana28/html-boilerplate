@@ -48,6 +48,20 @@
         background: #FFF;
         padding: 18px 0;
 
+        .menu-button {
+            span {
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                display: block;
+                margin-bottom: 5px;
+                transition: .5s;
+                &:last-child {
+                    width: 12px;
+                }
+            }
+        }
+
         ul {
             list-style-type: none;
             float: right;

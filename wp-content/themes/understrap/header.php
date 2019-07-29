@@ -93,8 +93,10 @@ $social_pinterest 	= get_theme_mod( 'understrap_social_pinterest_account' );
 
 				<div class="row d-flex">
 					<div class="col-xl-3 col-lg-4 col-md-12">
-						<button class="menu-button d-block d-lg-none" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-							<i class="icofont-navigation-menu"></i>
+						<button class="menu-button d-block d-lg-none navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+							<span></span>
+							<span></span>
+							<span></span>
 						</button>
 					</div>
 			
@@ -103,7 +105,7 @@ $social_pinterest 	= get_theme_mod( 'understrap_social_pinterest_account' );
 						<?php wp_nav_menu(
 							array(
 								'theme_location'  => 'primary',
-								'container_class' => 'main-menu d-none d-lg-block d-md-none d-sm-none',
+								'container_class' => 'main-menu collapse d-lg-block',
 								'container_id'    => 'navbarNavDropdown',
 								'menu_class'      => '',
 								'fallback_cb'     => '',
