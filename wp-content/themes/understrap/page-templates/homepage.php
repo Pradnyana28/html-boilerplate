@@ -39,7 +39,7 @@ $institutions    = get_field( 'institutions' );
 
 <div class="wrapper" id="full-width-page-wrapper">
 	<main class="site-main" id="main" role="main">
-		<div class="container mt-5">
+		<div class="container mt-5 no-mt-on-mobile">
             <div class="row">
                 <!-- left side -->
                 <div class="col-md-6">
