@@ -16,4 +16,4 @@ $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 	<?php get_template_part( 'sidebar-templates/sidebar', 'left' ); ?>
 <?php endif; ?>
 
-<div class="col-md content-area" id="primary">
+<div class="col-md content-area no-pl-on-mobile no-pr-on-mobile" id="primary">

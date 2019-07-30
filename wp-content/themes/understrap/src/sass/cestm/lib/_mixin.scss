@@ -34,3 +34,11 @@
     background: linear-gradient(to right, rgb(156, 36, 100) 0%, rgb(87, 13, 52) 53%, rgb(240,47,23) 71%, rgb(231,56,39) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=1 );
 }
+
+@mixin reverseOnMobile() {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    -moz-flex-direction: row-reverse;
+    -moz-flex-wrap: row-reverse;
+}

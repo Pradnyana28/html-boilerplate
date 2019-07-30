@@ -39,10 +39,10 @@ $institutions    = get_field( 'institutions' );
 <div class="wrapper" id="full-width-page-wrapper">
 	<main class="site-main" id="main" role="main">
 		<div class="container mt-5 no-mt-on-mobile">
-            <div class="row">
+            <div class="row reverse-on-mobile">
                 <!-- left side -->
                 <div class="col-md-6">
-                    <div class="section hide-on-mobile">
+                    <div class="section">
                         <h2 class="section-subtitle default-color text-uppercase"><?= $subtitle_one ?></h2>
                         <h1 class="section-title text-uppercase"><?= $title_one ?></h1>
                         <h3 class="section-tagline default-color text-uppercase"><?= $tagline_one ?></h3>
@@ -61,17 +61,6 @@ $institutions    = get_field( 'institutions' );
                         <!-- image illustration -->
                         <?php if( $image_one ): ?>
                             <img src="<?= $image_one[ 'url' ] ?>" alt="<?= $image_one[ 'caption' ] ?>" class="section-image m-0">
-                        <?php endif; ?>
-                    </div>
-                    <div class="section hide-on-desktop p-on-mobile">
-                        <h2 class="section-subtitle default-color text-uppercase"><?= $subtitle_one ?></h2>
-                        <h1 class="section-title text-uppercase"><?= $title_one ?></h1>
-                        <h3 class="section-tagline default-color text-uppercase"><?= $tagline_one ?></h3>
-                        <p><?= $description_one ?></p>
-                        <?php if ( $link_one ): ?>
-                            <div class="d-block">
-                                <a href="<?= $link_one[ 'url' ] ?>" target="<?= $link_one[ 'target' ] ?>" class="text-uppercase btn btn-default btn-hover-outline pl-5 pr-5"><?= $link_one[ 'title' ] ?></a>
-                            </div>
                         <?php endif; ?>
                     </div>
                 </div>

@@ -58,9 +58,9 @@ if ($sub_terms) {
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
-	<div class="container mb-5 programs-benefit">
+	<div class="container mb-5 programs-benefit no-pl-on-mobile no-pr-on-mobile mt-5-on-mobile">
         <div class="cestm-wrapper">
-            <div class="overflow-hidden br-4">
+            <div class="overflow-hidden br-4 no-br-on-mobile">
             <div class="cestm-breadcrumbs">
                 <?php show_breadcrumb($current->slug, $current->taxonomy, true); ?>
             </div>
@@ -124,8 +124,8 @@ if ($sub_terms) {
         <!-- Discover Section -->
         <div class="discover-wrapper mt-5">
             <?php if ($discovers): ?>
-            <div class="row section">
-                <div class="col-md-6">
+            <div class="row section reverse-on-mobile">
+                <div class="col-md-6 mt-5-on-mobile">
                     <h1 class="section-title text-uppercase"><?= $discovers['section_title'] ?></h1>
                     <h3 class="section-tagline default-color text-uppercase"><?= $discovers['section_tagline'] ?></h3>
                     <p><?= $discovers['section_description'] ?></p>
@@ -136,7 +136,7 @@ if ($sub_terms) {
                     <?php endif; ?>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 no-pl-on-mobile no-pr-on-mobile">
                     <img src="<?= $discovers['section_image']['sizes']['medium_large'] ?>" alt="" class="w-100">
                 </div>
             </div>

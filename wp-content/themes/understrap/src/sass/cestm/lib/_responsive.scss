@@ -1,3 +1,6 @@
+@media (min-width: 1500px) {
+    .hide-on-desktop { display: none; }
+}
 @media (max-width: 1500px) {
     .hide-on-desktop { display: none; }
 
@@ -63,14 +66,21 @@
     .logo { float: left; }
     .menu-button { float: right; }
     .contact-us-btn { display: none !important; }
-
-    .section {
-        .section-image {
-            width: 100% !important;
+    .margin-bottom-mobile { margin-bottom: 20px; }
+    .no-shadow-on-mobile { box-shadow: none !important; }
+    .no-br-on-mobile { border-radius: 0; }
+    .cestm-breadcrumbs {
+        li {
+            max-width: 125px;
+            height: 60px;
+            font-size: 12px;
+            a { word-spacing: 100vw; font-size: 12px; }
         }
     }
 
-    .margin-bottom-mobile { margin-bottom: 20px; }
+    .section {
+        .section-image { width: 100% !important; }
+    }
 
     .footer-widget {
         border-left: none !important;
@@ -84,9 +94,15 @@
         &:nth-child(3), &:nth-child(4) { display: none; }
     }
 }
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .hide-on-desktop { display: none; }
+    .no-pl-on-desktop { padding-left: 0 !important; }
+    .no-pr-on-desktop { padding-right: 0 !important; }
+}
 
-@media (min-width: 992px) and (max-width: 1199px) {}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hide-on-desktop { display: none; }
+}
 @media (min-width: 768px) and (max-width: 991px) {
     .wrapper { padding: 30px 0; }
 
@@ -100,11 +116,51 @@
     .no-mt-on-mobile {
         &.mt-5 { margin-top: 3rem !important; }
     }
+    .mt-5-on-mobile {
+        margin-top: 3rem;
+    }
 
     .footer-widget {
         &:nth-child(3), &:nth-child(4) { display: block; }
     }
 }
-@media (min-width: 576px) and (max-width: 767px) {}
-@media (min-width: 480px) and (max-width: 575px) {}
-@media (min-width: 320px) and (max-width: 479px) {}
+@media (min-width: 576px) and (max-width: 767px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .main-menu .hide-on-mobile {
+        display: none;
+    }
+
+    .no-mt-on-mobile {
+        &.mt-5 { margin-top: 3rem !important; }
+    }
+    .mt-5-on-mobile {
+        margin-top: 3rem;
+    }
+    .reverse-on-mobile {
+        @include reverseOnMobile();
+    }
+}
+@media (min-width: 480px) and (max-width: 575px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .mt-5-on-mobile {
+        margin-top: 3rem;
+    }
+    .reverse-on-mobile {
+        @include reverseOnMobile();
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .mt-5-on-mobile {
+        margin-top: 3rem;
+    }
+    .reverse-on-mobile {
+        @include reverseOnMobile();
+    }
+}

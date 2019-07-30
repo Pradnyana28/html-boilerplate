@@ -98,6 +98,7 @@ $discovers = get_field( 'discover_section', 'option' );
     </div> <!-- End of overflow-hidden -->
 </div>
 
+<div class="col-md no-pl-on-desktop no-pr-on-desktop">
 <!-- Similar Programs -->
 <div class="similar-programs mt-5 pt-3 pb-5">
     <h3 class="text-uppercase text-center">Programmes D'etudes Similaires</h3>
@@ -105,10 +106,10 @@ $discovers = get_field( 'discover_section', 'option' );
 </div>
 
 <!-- Discover Section -->
-<div class="discover-wrapper mt-5">
+<div class="discover-wrapper mt-5 no-mt-on-mobile">
     <?php if ($discovers): ?>
-    <div class="row section">
-        <div class="col-md-6">
+    <div class="row section reverse-on-mobile">
+        <div class="col-md-6 mt-5-on-mobile">
             <h1 class="section-title text-uppercase"><?= $discovers['section_title'] ?></h1>
             <h3 class="section-tagline default-color text-uppercase"><?= $discovers['section_tagline'] ?></h3>
             <p><?= $discovers['section_description'] ?></p>
@@ -119,9 +120,10 @@ $discovers = get_field( 'discover_section', 'option' );
             <?php endif; ?>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 no-pl-on-mobile no-pr-on-mobile">
             <img src="<?= $discovers['section_image']['sizes']['medium_large'] ?>" alt="" class="w-100">
         </div>
     </div>
     <?php endif; ?>
+</div>
 </div>

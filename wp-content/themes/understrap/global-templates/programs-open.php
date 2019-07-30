@@ -13,8 +13,8 @@ $subtitle = get_field( 'subtitle' );
 $month    = get_field( 'month' );
 ?>
 
-<div class="cestm-wrapper shadow">
-    <div class="overflow-hidden br-4">
+<div class="cestm-wrapper shadow mt-5-on-mobile no-shadow-on-mobile">
+    <div class="overflow-hidden br-4 no-br-on-mobile">
     <div class="cestm-breadcrumbs">
         <?php echo cestm_breadcrumbs( $post, 'departments' ) ?>
     </div>
