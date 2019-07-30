@@ -45,7 +45,7 @@ $logo_white			= get_field( 'logo_white', 'options' );
 <?php do_action( 'wp_body_open' ); ?>
 <header class="kst-header" id="page">
 	<?php if ( $navigation_logo ): ?>
-		<div class="logo-wrapper">
+		<div class="logo-wrapper fade-in">
 			<img src="<?= $navigation_logo ?>" alt="" class="logo">
 		</div>
 	<?php endif; ?>

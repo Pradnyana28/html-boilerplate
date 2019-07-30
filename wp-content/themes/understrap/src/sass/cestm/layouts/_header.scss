@@ -34,6 +34,8 @@
         background: #FFF;
         padding: 20px;
         z-index: 2;
+        opacity: 0;
+        transition: all .5s ease-in-out;
 
         a { 
             color: #FFF; 
@@ -41,6 +43,12 @@
         }
 
         .logo { width: 100%; }
+        &.fade-out {
+            opacity: 0;
+        }
+        &.fade-in {
+            opacity: 1;
+        }
     }
 
     .main-menu {
@@ -164,13 +172,23 @@
         a { color: #FFF; }
     }
 
-    #navbarNavDropdown.show {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        overflow-y: scroll;
+    #navbarNavDropdown {
+        transition: .5s;
+        &.show {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            overflow-y: scroll;
+        }
+        &.collapsing {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0 !important;
+            height: 0 !important;
+        }
     }
 }

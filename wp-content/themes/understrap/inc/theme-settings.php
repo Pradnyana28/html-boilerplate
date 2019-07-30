@@ -50,7 +50,8 @@ if ( ! function_exists( 'cestm_breadcrumbs' ) ) {
 		foreach ( $terms as $term ) {
 			$is_clickable    = get_field( 'is_clickable', $term );
 			$link = get_term_link( $term, $taxonomy );
-			$li_class = $is_clickable ? 'with-hover' : '';
+			$li_class = $is_clickable ? 'with-hover d-flex' : '';
+			$li_class .= $term->parent == 0 ? '' : ' hide-on-mobile';
 			$link_clickable  = $is_clickable ? '<a href="'. esc_attr( $link ) .'" rel="tag" class="text-white">'. esc_html( $term->name ) .'</a>' : esc_html( $term->name );
 
 			$links[] = sprintf(
@@ -174,7 +175,7 @@ if ( ! function_exists('get_post_by_taxonomy') ) {
 			'tax_query' => array(
 				array(
 					'taxonomy' => $taxonomy,
-					'field' => 'slug',
+					'field' => 'name',
 					'terms' => $terms
 				)
 			),

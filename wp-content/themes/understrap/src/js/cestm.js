@@ -158,10 +158,14 @@
         $('.menu-button').addClass('active-burger');
         $('body').addClass('navbar-open');
         $('#white-logo').addClass('collapse-logo-wrapper');
+        $('.logo-wrapper').addClass('fade-out');
+        $('.logo-wrapper').removeClass('fade-in');
     });
     $('#navbarNavDropdown').on('hide.bs.collapse', function () {
         $('.menu-button').removeClass('active-burger');
         $('body').removeClass('navbar-open');
         $('#white-logo').removeClass('collapse-logo-wrapper');
+        $('.logo-wrapper').addClass('fade-in');
+        $('.logo-wrapper').removeClass('fade-out');
     });
 }(jQuery))
