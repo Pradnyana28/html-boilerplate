@@ -123,7 +123,7 @@ if ( ! function_exists( 'related_programs' ) ) {
 			echo '<div class="similar-programs mt-5 mb-5 row">';
 			while ( $related_items->have_posts() ) : $related_items->the_post();
 			$short_description = wp_trim_words( get_the_content() );
-        	$short_description = strlen( $short_description ) > 200 ? substr( $short_description, 0, 200 ) .'...' : $short_description;
+        	$short_description = strlen( $short_description ) > 150 ? substr( $short_description, 0, 150 ) .'...' : $short_description;
 			?>
 			<div class="col-md-4 col-lg-4 col-sm-12 margin-bottom-mobile">
 				<div class="card kesato-card p-4 border-top">
