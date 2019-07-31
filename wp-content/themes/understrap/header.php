@@ -118,7 +118,23 @@ $logo_white			= get_field( 'logo_white', 'options' );
 								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 							)
 						); ?>
-						<?php wp_nav_menu(
+						<?php 
+						if ( $show_extra_button ):
+							$pushed_list_item = '<li class="mobile-nav-button"><a href="'. $extra_button_link .'">'. $extra_button_name .'</a></li>';
+						endif;
+						if ( $social_facebook ):
+							$pushed_list_item .= '<li><a href="'. $social_facebook .'" target="_blank" class="text-white"><i class="fa fa-facebook"></i></a></li>';
+						endif;
+						if ( $social_instagram ):
+							$pushed_list_item .= '<li><a href="'. $social_instagram .'" target="_blank" class="text-white"><i class="fa fa-instagram"></i></a></li>';
+						endif;
+						if ( $social_twitter ):
+							$pushed_list_item .= '<li><a href="'. $social_twitter .'" target="_blank" class="text-white"><i class="fa fa-twitter"></i></a></li>';
+						endif;
+						if ( $social_pinterest ):
+							$pushed_list_item .= '<li><a href="'. $social_pinterest .'" target="_blank" class="text-white"><i class="fa fa-twitter"></i></a></li>';
+						endif;
+						wp_nav_menu(
 							array(
 								'theme_location'  => 'mobile-menu',
 								'container_class' => 'main-menu collapse hide-on-desktop',
@@ -127,6 +143,7 @@ $logo_white			= get_field( 'logo_white', 'options' );
 								'fallback_cb'     => '',
 								'menu_id'         => 'main-menu',
 								'depth'           => 2,
+								'items_wrap' 	  => '<ul id="%1$s" class="%2$s">%3$s'. $pushed_list_item .'</ul>',
 								'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 							)
 						); ?>
