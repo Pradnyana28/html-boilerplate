@@ -34,6 +34,22 @@ if ( ! function_exists( 'understrap_setup_theme_default_settings' ) ) {
 	}
 }
 
+if ( ! function_exists( 'get_last_term' ) ) {
+	function get_last_term( $post, $taxonomy ) {
+		$term_ids = wp_get_post_terms( $post->ID, $taxonomy, array(
+			'fields'  => 'ids',
+		) );
+		$terms = get_terms( $taxonomy, array(
+			'include'    => $term_ids,
+			'orderby'    => 'term_order',
+			'order'      => 'ASC',
+			'hide_empty' => false
+		) );
+		$key = count($terms) - 1;
+		return $terms[$key];
+	}
+}
+
 if ( ! function_exists( 'cestm_breadcrumbs' ) ) {
 	function cestm_breadcrumbs( $post, $taxonomy ) {
 		ob_start();

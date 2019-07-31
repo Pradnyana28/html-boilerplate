@@ -9,8 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$subtitle = get_field( 'subtitle' );
-$month    = get_field( 'month' );
+$subtitle  = get_field( 'subtitle' );
+$lastTerm  = get_last_term( $post, 'departments' );
+$termLink  = get_term_link( $lastTerm, 'departments' );
+
 ?>
 
 <div class="cestm-wrapper shadow mt-5-on-mobile no-shadow-on-mobile">
@@ -20,7 +22,5 @@ $month    = get_field( 'month' );
     </div>
 
     <div class="p-4">
-        <?php if ( $month ): ?>
-            <span class="btn btn-default-outline mb-4 no-br pl-5 pr-5"><?= $month ?></span>
-        <?php endif; ?>
+        <a href="<?= $termLink ?>" class="btn btn-default-outline mb-4 no-br pl-5 pr-5"><?= $lastTerm->name ?></a>
         <h2 class="text-uppercase mb-3"><?= $post->post_title ?> <?php if ( $subtitle ): echo '<span class="default-color"> - '. $subtitle .'</span>'; endif; ?></h2>
