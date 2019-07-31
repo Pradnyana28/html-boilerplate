@@ -20,7 +20,7 @@ if ( count( $posts ) > 0 ) {
                     <h5 class="card-title"><?= $post_title ?></h5>
                     <p class="card-text"><?= $short_description ?></p>
                 </div>
-                <a href="<?= $post_link ?>" class="btn btn-default btn-hover-outline d-block">Go somewhere</a>
+                <a href="<?= $post_link ?>" class="btn btn-default btn-hover-outline d-block"><?= __('Learn More', 'cestm') ?></a>
             </div>
             <div class="card-hover"></div>
         </div>

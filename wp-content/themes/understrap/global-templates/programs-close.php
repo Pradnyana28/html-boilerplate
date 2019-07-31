@@ -101,7 +101,7 @@ $discovers = get_field( 'discover_section', 'option' );
 <div class="col-md no-pl-on-desktop no-pr-on-desktop">
 <!-- Similar Programs -->
 <div class="similar-programs mt-5 pt-3 pb-5">
-    <h3 class="text-uppercase text-center">Programmes D'etudes Similaires</h3>
+    <h3 class="text-uppercase text-center"><?php echo __('Related Program', 'cestm') ?></h3>
     <?= related_programs( $post, 'departments' ) ?>
 </div>
 

@@ -132,7 +132,7 @@ if ( ! function_exists( 'related_programs' ) ) {
 						<p><?= $short_description; ?></p>
 					</div>
 					<a href="<?php the_permalink(); ?>" class="btn btn-default btn-hover-outline d-block">
-						See programs
+						<?= __('See The Programs', 'cestm') ?>
 					</a>
 				</div>
 			</div>
@@ -193,7 +193,7 @@ if ( ! function_exists('get_post_by_taxonomy') ) {
 			<?php
 			endwhile;
 			echo "</select>";
-			echo '<button class="program-button d-block mt-3 btn btn-default btn-hover-outline pl-5 pr-5 col-12">Voir le programme</button>';
+			echo '<button class="program-button d-block mt-3 btn btn-default btn-hover-outline pl-5 pr-5 col-12">'. __('See The Programs', 'cestm') .'</button>';
 		}
 	}
 }

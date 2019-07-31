@@ -63,14 +63,14 @@ add_action('upload_mimes', 'add_file_types_to_uploads');
 if( function_exists('acf_add_options_page') ) {
 	// Let's add our Options Page
 	acf_add_options_page(array(
-		'page_title'    => 'Theme Options',
+		'page_title'    => __('Theme Options', 'cestm'),
 		'menu_title'    => 'Theme Options',
 		'menu_slug'     => 'theme-options',
 		'capability'    => 'edit_posts'
 	));
 
 	acf_add_options_sub_page(array(
-		'page_title'    => 'General Setting',
+		'page_title'    => __('General Setting', 'cestm'),
 		'parent_slug'   => 'theme-options',
 		'menu_title'    => 'General Setting',
 		'menu_slug'     => 'general-setting',
@@ -79,23 +79,23 @@ if( function_exists('acf_add_options_page') ) {
 	// If we want to add multiple sections to our Options Page
 	// we can do so with an Options Sub Page.
 	acf_add_options_sub_page(array(
-		'page_title'    => "Register Guides",
+		'page_title'    => __("Register Guides", 'cestm'),
 		'parent_slug'   => 'theme-options',  // 'menu_slug' on the parent options page
 		'menu_title'    => "Register Guides",
 		'menu_slug'     => 'register-guides',
 	));
 
 	acf_add_options_sub_page(array(
-		'page_title'    => 'Discover Montreal',
+		'page_title'    => __('Discover Montreal', 'cestm'),
 		'parent_slug'   => 'theme-options',
 		'menu_title'    => 'Discover Montreal',
 		'menu_slug'     => 'discover-montreal',
 	));
 
 	acf_add_options_sub_page(array(
-		'page_title'    => 'Programme D\'etudes',
+		'page_title'    => __('Program Study', 'cestm'),
 		'parent_slug'   => 'theme-options',
-		'menu_title'    => 'Programme D\'etudes',
+		'menu_title'    => __('Program Study', 'cestm'),
 		'menu_slug'     => 'programme-detudes',
 	));
 }

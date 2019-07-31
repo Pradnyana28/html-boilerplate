@@ -20,7 +20,7 @@ if ( count( $programs ) > 0 ) {
                     <h5 class="card-title"><?= $program_title ?></h5>
                     <p class="card-text"><?= $short_description ?></p>
                 </div>
-                <a href="<?= $program_link ?>" class="btn btn-default btn-hover-outline d-block">Go somewhere</a>
+                <a href="<?= $program_link ?>" class="btn btn-default btn-hover-outline d-block"><?= __('See The Programs', 'cestm') ?></a>
             </div>
             <div class="card-hover"></div>
         </div>

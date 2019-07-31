@@ -4,7 +4,7 @@
     $fixed_card = get_field( 'fixed_Card', 'options' );
 ?>
 <div class="container mt-5">
-    <h2 class="text-uppercase text-bold text-center">Nos Programmes D'etudes</h2>
+    <h2 class="text-uppercase text-bold text-center"><?= __('Our Programs of Study', 'cestm') ?></h2>
 
     <?php
     if ( count( $programs ) > 0 ) {
@@ -27,7 +27,7 @@
                         <h5 class="card-title"><?= $program_title ?></h5>
                         <p class="card-text"><?= $short_description ?></p>
                     </div>
-                    <a href="<?= $program_link ?>" class="btn btn-default btn-hover-outline d-block">Go somewhere</a>
+                    <a href="<?= $program_link ?>" class="btn btn-default btn-hover-outline d-block"><?= __('See The Programs', 'cestm') ?></a>
                 </div>
                 <div class="card-hover"></div>
             </div>

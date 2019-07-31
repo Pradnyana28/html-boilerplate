@@ -85,6 +85,7 @@ if ($sub_terms) {
                 <?= $program_study['program_technic_content'] ?>
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
+                    <?php if ($sub_terms): ?>
                         <select class='form-control custom-select program-selects col-12 w-100'>
                         <?php 
                             foreach ($sub_terms as $sub_term) {
@@ -97,7 +98,8 @@ if ($sub_terms) {
                             }
                         ?>
                         <select>
-                        <button class="program-button d-block mt-3 btn btn-default btn-hover-outline pl-5 pr-5 col-12">Voir le programme</button>
+                        <button class="program-button d-block mt-3 btn btn-default btn-hover-outline pl-5 pr-5 col-12"><?= __('See The Programs', 'cestm') ?></button>
+                    <?php endif; ?>
                     </div>
                 </div>
             </div>
