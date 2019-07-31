@@ -60,6 +60,17 @@
 
         .card-title {
             font-size: 30px;
+            &:after {
+                content: ' ';
+                position: absolute;
+                display: block;
+                width: 20px;
+                margin: 6% 0;
+                border: 2px solid #000;
+            }
+            &.title-bottom-border {
+                margin-bottom: 50px !important;
+            }
         }
     }
 
