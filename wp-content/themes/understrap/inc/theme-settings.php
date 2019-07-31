@@ -153,7 +153,7 @@ if ( ! function_exists('display_institution_dropdown') ) {
 		);
 		$the_query = new WP_Query($args);
 		echo "<select id='institution-select' class='form-control custom-select institution-select'>";
-		echo "<option value='' selected disabled>Select institutions</option>";
+		echo "<option value='' selected disabled>". __('Select institutions', 'cestm') ."</option>";
 		while ( $the_query->have_posts() ) : $the_query->the_post();
 			$id = get_the_ID();
 			$title = get_the_title();
