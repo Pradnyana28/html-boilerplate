@@ -20,22 +20,16 @@ $is_technic_program = get_field( 'is_technic_program', $current );
 $program_study = get_field( 'program_study', $current );
 
 // return the ID of the current term
-// i.e. ID of term "Photoshop" is "26", so we get "26" if we are viewing "Photoshop"
 $current_term_id = $current->term_id;
 
 // return the nicename of the current term
-// i.e. returns "Photoshop"
-// or "ps-thematic#1" if we are on a child term of "Photoshop"
 $current_name = $current->name;
 
 // returns the current taxonomy slug we are in
-// i.e. it will return "course"
 $current_taxonomy = $current->taxonomy;
 
 // returns the ID of the parent, if we have a parent
-// i.e. if we are viewing "ps-thematic#1" it will return the ID of "Photoshop", 26
-// if we are viewing "Photoshop", it will return 0, because "Photoshop" is a top level term
-#$current_parent = $current->parent;
+// $current_parent = $current->parent;
 
 $techniquesID = get_term_by( 'name', 'techniques', 'departments' )->term_id;
 $sub_terms = get_terms( array(
