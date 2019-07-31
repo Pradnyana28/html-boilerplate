@@ -1,0 +1,22 @@
+.custom-select {
+    font-size: 13px;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    line-height: 20px;
+    height: 40px;
+
+    &:focus {
+        border-color: $brand-color;
+        box-shadow: 0 0 0 .2rem $brand-color;
+    }
+}
+
+.institution-select {
+    max-width: 350px;
+    font-size: 13px;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    line-height: 20px;
+    height: 40px;
+    transition: all .1s ease-in-out;
+}

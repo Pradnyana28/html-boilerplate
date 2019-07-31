@@ -18,7 +18,7 @@ $discovers = get_field( 'discover_section', 'option' );
         <div id="accordion" class="cestm-collapse">
             <div class="p-4 collapse-item">
                 <a class="collapse-button d-block" data-parent="#accordion" data-toggle="collapse" href="#whoIsItFor" role="button" aria-expanded="false" aria-controls="whoIsItFor">
-                    Who is It For
+                    <?= __('Who is It For', 'cestm') ?>
                 </a>
                 <div class="collapse collapse-content" id="whoIsItFor">
                     <?php the_field( 'who_is_it_for' ) ?>
@@ -27,7 +27,7 @@ $discovers = get_field( 'discover_section', 'option' );
 
             <div class="p-4 collapse-item">
                 <a class="collapse-button d-block" data-parent="#accordion" data-toggle="collapse" href="#whatYouWillLearn" role="button" aria-expanded="false" aria-controls="whatYouWillLearn">
-                    What You Will Learn
+                    <?= __('What You Will Learn', 'cestm') ?>
                 </a>
                 <div class="collapse collapse-content" id="whatYouWillLearn">
                     <?php the_field( 'what_you_will_learn' ) ?>
@@ -36,7 +36,7 @@ $discovers = get_field( 'discover_section', 'option' );
 
             <div class="p-4 collapse-item">
                 <a class="collapse-button d-block" data-parent="#accordion" data-toggle="collapse" href="#employmentProspects" role="button" aria-expanded="false" aria-controls="employmentProspects">
-                    Employment Prospects
+                    <?= __('Employment Prospects', 'cestm') ?>
                 </a>
                 <div class="collapse collapse-content" id="employmentProspects">
                     <?php the_field( 'employment_prospects' ) ?>
@@ -45,7 +45,7 @@ $discovers = get_field( 'discover_section', 'option' );
 
             <div class="p-4 collapse-item">
                 <a class="collapse-button d-block" data-parent="#accordion" data-toggle="collapse" href="#costsAndConditions" role="button" aria-expanded="false" aria-controls="costsAndConditions">
-                    Costs and Conditions of Admissions
+                    <?= __('Costs and Conditions of Admissions', 'cestm') ?>
                 </a>
                 <div class="collapse collapse-content" id="costsAndConditions">
                     <?php the_field( 'costs_and_conditions' ) ?>
@@ -54,7 +54,7 @@ $discovers = get_field( 'discover_section', 'option' );
 
             <div class="p-4 collapse-item">
                 <a class="collapse-button d-block" data-parent="#accordion" data-toggle="collapse" href="#durationAndDates" role="button" aria-expanded="false" aria-controls="durationAndDates">
-                    Duration and Dates of Registration
+                    <?= __('Duration and Dates of Registration', 'cestm') ?>
                 </a>
                 <div class="collapse collapse-content" id="durationAndDates">
                     <?php the_field( 'duration_and_dates' ) ?>
@@ -63,7 +63,7 @@ $discovers = get_field( 'discover_section', 'option' );
 
             <div class="p-4 collapse-item">
                 <a class="collapse-button d-block" data-parent="#accordion" data-toggle="collapse" href="#howToRegister" role="button" aria-expanded="false" aria-controls="howToRegister">
-                    How To Register
+                    <?= __('How To Register', 'cestm') ?>
                 </a>
                 <div class="collapse collapse-content" id="howToRegister">
                     <?php $how_to_register = get_field( 'how_to_register', 'option' ) ?>
