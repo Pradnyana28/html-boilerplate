@@ -133,7 +133,7 @@ $logo_white			= get_field( 'logo_white', 'options' );
 					</div>
 			
 					<?php if ( $show_extra_button ): ?>
-						<div class="col-xl-2 col-lg-2 d-flex align-items-center">
+						<div class="col-xl-2 col-lg-2 d-flex hide-on-mobile align-items-center">
 							<a href="<?= $extra_button_link ?>" class="contact-us-btn btn d-block w-100 btn-default-outline"><?= $extra_button_name ?></a>
 						</div>
 					<?php endif; ?>
