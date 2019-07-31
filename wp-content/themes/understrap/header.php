@@ -103,7 +103,7 @@ $logo_white			= get_field( 'logo_white', 'options' );
 			
 					<div class="col-xl-<?= $show_extra_button ? '7' : '9' ?> d-flex align-items-center col-lg-8 col-md-12">
 						<!-- The WordPress Menu goes here -->
-						<div id="white-logo" class="hide-on-mobile hide-on-desktop">
+						<div id="white-logo" class="hide-on-desktop">
 							<img src="<?= $logo_white['sizes']['medium_large'] ?>" alt="">
 						</div>
 						<?php wp_nav_menu(

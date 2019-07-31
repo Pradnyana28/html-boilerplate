@@ -20,25 +20,29 @@
             width: 150px;
             padding: 10px;
         }
-        .main-menu ul {
-            float: none;
-            overflow: hidden;
-            li {
+        .main-menu {
+            height: 94px;
+            
+            ul {
                 float: none;
-                padding: 0 !important;
-                text-align: center;
-                a {
-                    padding: 20px !important;
-                    color: #FFF;
-                    font-size: 20px;
-                    display: block;
-                }
+                overflow: hidden;
+                li {
+                    float: none;
+                    padding: 0 !important;
+                    text-align: center;
+                    a {
+                        padding: 20px !important;
+                        color: #FFF;
+                        font-size: 20px;
+                        display: block;
+                    }
 
-                &.current_page_item > a,
-                &.current-menu-item > a,
-                &.current_page_ancestor > a,
-                &.current-menu-ancestor > a {
-                    border-bottom: none;
+                    &.current_page_item > a,
+                    &.current-menu-item > a,
+                    &.current_page_ancestor > a,
+                    &.current-menu-ancestor > a {
+                        border-bottom: none;
+                    }
                 }
             }
         }

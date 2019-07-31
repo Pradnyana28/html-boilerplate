@@ -173,6 +173,8 @@
             position: fixed;
             top: 80px;
             margin-left: -15px;
+            transition: .5s;
+            opacity: 1 !important;
             img {
                 width: 180px;
             }
@@ -187,23 +189,34 @@
         a { color: #FFF; }
     }
 
+    #white-logo {
+        transition: all .5s ease-in-out;
+        opacity: 0;
+    }
+
     #navbarNavDropdown {
-        transition: .5s;
+        transition: .3s;
+        clip-path: circle(0%);
         &.show {
             position: fixed;
             width: 100vw;
             height: 100vh;
             z-index: 2;
             top: 0;
-            left: 0;
+            right: 0;
             overflow-y: scroll;
+            transition-property: all;
+            transition-duration: .5s;
+            transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+            clip-path: circle(100%);
         }
         &.collapsing {
             position: fixed;
             top: 0;
-            left: 0;
-            width: 0 !important;
-            height: 0 !important;
+            right: 0;
+            // width: 0 !important;
+            // height: 0 !important;
+            z-index: 2;
         }
     }
 }
