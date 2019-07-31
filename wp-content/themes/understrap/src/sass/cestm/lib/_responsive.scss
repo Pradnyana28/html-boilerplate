@@ -93,6 +93,14 @@
         &:nth-child(1) { padding-bottom: 15px; }
         &:nth-child(3), &:nth-child(4) { display: none; }
     }
+
+    .kesato-card {
+        p { 
+            text-overflow: ellipsis; 
+            white-space: nowrap; 
+            overflow: hidden;
+        }
+    }
 }
 @media (min-width: 992px) {
     .hide-on-desktop { display: none; }

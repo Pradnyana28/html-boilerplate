@@ -23,6 +23,21 @@
                 a {
                     color: #FFF;
                 }
+
+                // sub child nav
+                ul {
+                    li {
+                        width: 100%;
+                        padding: 0px;
+                        a { 
+                            color: $brand-color;
+
+                            &:hover {
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

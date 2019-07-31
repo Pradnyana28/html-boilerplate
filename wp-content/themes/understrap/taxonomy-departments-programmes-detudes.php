@@ -37,23 +37,19 @@ $current_taxonomy = $current->taxonomy;
 // if we are viewing "Photoshop", it will return 0, because "Photoshop" is a top level term
 #$current_parent = $current->parent;
 
+$techniquesID = get_term_by( 'name', 'techniques', 'departments' )->term_id;
 $sub_terms = get_terms( array(
     'taxonomy'      => $current_taxonomy,
-    'child_of'      => 7,
+    'child_of'      => $techniquesID,
     'hide_empty'    => false,
 ) );
 
-// only start is some sub terms exist
-if ($sub_terms) {
-    echo '<ul class="sub-terms">';
-    foreach ($sub_terms as $sub_term) {
-        // try    to see all available data!
-        if ($sub_term->parent == 7) {
-            // echo '<li>'.$sub_term->name.'</li>';
-        }
-    }
-    echo '</ul>';
-}
+$preUniversityID = get_term_by( 'name', 'pre-university', 'departments' )->term_id;
+$pre_terms = get_terms( array(
+    'taxonomy'      => $current_taxonomy,
+    'child_of'      => $preUniversityID,
+    'hide_empty'    => false,
+) );
 
 ?>
 
@@ -89,10 +85,7 @@ if ($sub_terms) {
                         <select class='form-control custom-select program-selects col-12 w-100'>
                         <?php 
                             foreach ($sub_terms as $sub_term) {
-                                // try    to see all available data!
-                                if ($sub_term->parent == 7) {
-                                    // print_r($sub_term);
-                                    // echo get_term_link($sub_term);
+                                if ($sub_term->parent == $techniquesID) {
                                     echo '<option value="'. $sub_term->term_id .'" data-link="'. get_term_link($sub_term) .'">'.$sub_term->name.'</option>';
                                 }
                             }
@@ -114,7 +107,18 @@ if ($sub_terms) {
                 <?= $program_study['pre_program_content'] ?>
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <?php get_post_by_taxonomy( ['pre'], $current->taxonomy ) ?>
+                    <?php if ($pre_terms): ?>
+                        <select class='form-control custom-select program-selects col-12 w-100'>
+                        <?php 
+                            foreach ($pre_terms as $pre_term) {
+                                if ($pre_term->parent == $preUniversityID) {
+                                    echo '<option value="'. $pre_term->term_id .'" data-link="'. get_term_link($pre_term) .'">'.$pre_term->name.'</option>';
+                                }
+                            }
+                        ?>
+                        <select>
+                        <button class="program-button d-block mt-3 btn btn-default btn-hover-outline pl-5 pr-5 col-12"><?= __('See The Programs', 'cestm') ?></button>
+                    <?php endif; ?>
                     </div>
                 </div>
             </div>
